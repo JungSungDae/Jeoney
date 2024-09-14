@@ -6,22 +6,22 @@ export default function MenuBar() {
     <View style={styles.container}>
       <View style={styles.menuBar}>
         <View style={styles.menuItem}>
-          { <Image source={require('../assets/MenuBarIcons/main.png')} style={styles.icon} /> }
+          { <Image source={require('../assets/MenuIcons/main.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>메인</Text>
         </View>
 
         <View style={styles.menuItem}>
-          { <Image source={require('../assets/MenuBarIcons/map.png')} style={styles.icon} /> }
+          { <Image source={require('../assets/MenuIcons/map.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>지도</Text>
         </View>
 
         <View style={styles.menuItem}>
-          { <Image source={require('../assets/MenuBarIcons/crew.png')} style={styles.icon} /> }
+          { <Image source={require('../assets/MenuIcons/crew.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>크루</Text>
         </View>
 
         <View style={styles.menuItem}>
-          { <Image source={require('../assets/MenuBarIcons/my.png')} style={styles.icon} /> }
+          { <Image source={require('../assets/MenuIcons/my.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>마이</Text>
         </View>
       </View>
