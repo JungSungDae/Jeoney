@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+import MapViewDirections from 'react-native-maps-directions';
 import * as Location from 'expo-location';
 
 export default function App() {
-	const markerImg = require("../assets/MapViewIcons/marker.png")
+  const markerImg = require("../assets/MapViewIcons/marker.png");
+  const GOOGLE_MAPS_API_KEY = 'AIzaSyBnVeoo1KPt7cjYr8Sc2Cnc-9sGhQRwYFg';
 
-	//현재 사용자의 위치를 구하는 함수 (지도를 켰을 때, uesEffect가 한번 실행 됨)
   const [presentLocation, setLocation] = useState(null);
+  const [destination, setDestination] = useState({
+    latitude: 35.814995, 
+    longitude: 127.123293,
+  });
+
   useEffect(() => {
     const getLocation = async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
@@ -27,7 +33,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       {presentLocation ? (
-				// 맵 뷰를 보여줌
         <MapView
           style={styles.map}
           initialRegion={{
@@ -37,26 +42,32 @@ export default function App() {
             longitudeDelta: 0.0421,
           }}
         >
-				{/* 현재 위치에 마커를 띄움 */}
-				<Marker
-					coordinate={{
-						latitude: presentLocation.latitude,
-						longitude: presentLocation.longitude,
-					}}
-					title="현재 위치"
-					description="여기에 있습니다"
-					image={markerImg}
-				/>
-				<Marker
-					coordinate={{
-						latitude: 35.849831,
-						longitude: 127.161830,
-					}}
-					title="전주"
-					description="목적지"
-					image={markerImg}
-				/>
-				</MapView>
+          <Marker
+            coordinate={{
+              latitude: presentLocation.latitude,
+              longitude: presentLocation.longitude,
+            }}
+            title="현재 위치"
+            description="여기에 있습니다"
+            image={markerImg}
+          />
+          <Marker
+            coordinate={destination}
+            title="목적지"
+            description="도착지점입니다"
+            image={markerImg}
+          />
+          <MapViewDirections
+            origin={presentLocation}
+            destination={destination}
+            apikey={GOOGLE_MAPS_API_KEY}
+            strokeWidth={3}
+            strokeColor="hotpink"
+            onError={(errorMessage) => {
+              console.log('Error fetching directions:', errorMessage);
+            }}
+          />
+        </MapView>
       ) : (
         <Text>맵을 로딩 합니다...</Text>
       )}
