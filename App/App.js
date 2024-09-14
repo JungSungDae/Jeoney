@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import MapApi from "./screens/MapView";
+import MapView from "./screens/MapTest";
 import Main from "./screens/Main";
 import MenuBar from "./screens/MenuBar";
 import MissionFoodModal from "./screens/MissionFoodModal";
@@ -16,7 +16,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main">
         <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="MapApi" component={MapApi} />
+        <Stack.Screen name="MapView" component={MapView} />
         <Stack.Screen name="MenuBar" component={MenuBar} />
         <Stack.Screen name="MissionFoodModal" component={MissionFoodModal} />
         <Stack.Screen name="StartButtonWindow" component={StartButtonWindow} />

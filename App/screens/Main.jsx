@@ -6,8 +6,8 @@ export default function App({navigation}) {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Button 
-        title="go to MapApi" 
-        onPress={() => navigation.navigate('MapApi')}
+        title="go to MapView" 
+        onPress={() => navigation.navigate('MapView')}
       >
       </Button>
       <Text>---------------</Text>

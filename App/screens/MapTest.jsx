@@ -47,6 +47,15 @@ export default function App() {
 					description="여기에 있습니다"
 					image={markerImg}
 				/>
+				<Marker
+					coordinate={{
+						latitude: 35.849831,
+						longitude: 127.161830,
+					}}
+					title="전주"
+					description="목적지"
+					image={markerImg}
+				/>
 				</MapView>
       ) : (
         <Text>맵을 로딩 합니다...</Text>
