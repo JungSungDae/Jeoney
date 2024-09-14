@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import MapApi from "./screens/MapAPI";
+import MapApi from "./screens/MapView";
 import Main from "./screens/Main";
 import MenuBar from "./screens/MenuBar";
 import MissionFoodModal from "./screens/MissionFoodModal";
