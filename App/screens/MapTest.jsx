@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Dimensions } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, Polyline } from 'react-native-maps';  // Polyline 추가
 import * as Location from 'expo-location';
+import MapViewDirections from 'react-native-maps-directions';  // Directions API 추가
 import MapDataSample from '../Data/MapDataSample.json';
 
 // 화면의 가로/세로 비율 계산
@@ -18,6 +19,9 @@ export default function App() {
   const [selectedCity, setSelectedCity] = useState(null);  // 선택된 도시
   const [showLandmarks, setShowLandmarks] = useState(false);  // 명소 표시 여부
   const mapRef = useRef(null);  // MapView에 대한 참조
+
+  // Google Maps API 키 설정 (환경 변수로 저장하는 것이 좋음)
+  const GOOGLE_MAPS_APIKEY = 'AIzaSyBnVeoo1KPt7cjYr8Sc2Cnc-9sGhQRwYFg';
 
   // 컴포넌트 마운트 시 현재 위치 가져오기
   useEffect(() => {
@@ -45,21 +49,21 @@ export default function App() {
 
     // 모든 명소의 좌표를 고려하여 최소/최대 위도와 경도 계산
     city.markedLandmarks.forEach(landmark => {
-      minLat = Math.min(minLat, landmark.coodinate.latitude);
-      maxLat = Math.max(maxLat, landmark.coodinate.latitude);
-      minLng = Math.min(minLng, landmark.coodinate.longitude);
-      maxLng = Math.max(maxLng, landmark.coodinate.longitude);
+      minLat = Math.min(minLat, landmark.coordinate.latitude);
+      maxLat = Math.max(maxLat, landmark.coordinate.latitude);
+      minLng = Math.min(minLng, landmark.coordinate.longitude);
+      maxLng = Math.max(maxLng, landmark.coordinate.longitude);
     });
 
     // 도시 자체의 좌표도 고려
-    minLat = Math.min(minLat, city.coodinate.latitude);
-    maxLat = Math.max(maxLat, city.coodinate.latitude);
-    minLng = Math.min(minLng, city.coodinate.longitude);
-    maxLng = Math.max(maxLng, city.coodinate.longitude);
+    minLat = Math.min(minLat, city.coordinate.latitude);
+    maxLat = Math.max(maxLat, city.coordinate.latitude);
+    minLng = Math.min(minLng, city.coordinate.longitude);
+    maxLng = Math.max(maxLng, city.coordinate.longitude);
 
     // 선택된 도시를 중앙에 배치
-    const centerLat = city.coodinate.latitude;
-    const centerLng = city.coodinate.longitude;
+    const centerLat = city.coordinate.latitude;
+    const centerLng = city.coordinate.longitude;
 
     // 위도와 경도의 델타 값 계산 (여유 공간을 위해 1.5배 확장)
     const latDelta = Math.max((maxLat - minLat) * 1.5, 0.02);
@@ -112,8 +116,8 @@ export default function App() {
       <Marker
         key={index}
         coordinate={{
-          latitude: city.coodinate.latitude,
-          longitude: city.coodinate.longitude,
+          latitude: city.coordinate.latitude,
+          longitude: city.coordinate.longitude,
         }}
         title={`${city.name}`}
         description="경유지"
@@ -130,8 +134,8 @@ export default function App() {
       <Marker
         key={index}
         coordinate={{
-          latitude: landmark.coodinate.latitude,
-          longitude: landmark.coodinate.longitude,
+          latitude: landmark.coordinate.latitude,
+          longitude: landmark.coordinate.longitude,
         }}
         title={`${landmark.name}`}
         description="대충 명소지"
@@ -168,6 +172,26 @@ export default function App() {
             {/* 도시 및 명소 마커 */}
             {ShowMarkedCities()}
             {ShowMarkedLandmarks()}
+
+            {/* 경로 표시: 서울 -> 현재 위치 */}
+            <MapViewDirections
+              origin={{
+                latitude: MapDataSample.startSpots.seoul.coordinate.latitude,
+                longitude: MapDataSample.startSpots.seoul.coordinate.longitude,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}
+              destination={{
+                latitude: presentLocation.latitude,
+                longitude: presentLocation.longitude,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}
+              apikey={GOOGLE_MAPS_APIKEY}
+              strokeWidth={3}
+              strokeColor="blue"
+              mode="DRIVING" // 걷기, 자전거 등을 위해 'WALKING', 'BICYCLING' 모드도 가능
+            />
           </MapView>
           {/* 선택 해제 버튼 */}
           {showLandmarks && (
