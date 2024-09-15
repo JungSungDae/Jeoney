@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Dimensions, ActivityIndicator } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';  // Polyline 추가
 import * as Location from 'expo-location';
 import MapViewDirections from 'react-native-maps-directions';  // Directions API 추가
@@ -15,30 +15,66 @@ export default function App() {
   const landmarkMarkerImg = require("../assets/MapViewIcons/landmarkMarker.png");
 
   // 상태 변수 정의
-  const [presentLocation, setLocation] = useState(null);  // 현재 위치
+  const [presentLocation, setPresentLocation] = useState(null);  // 현재 위치
   const [selectedCity, setSelectedCity] = useState(null);  // 선택된 도시
   const [showLandmarks, setShowLandmarks] = useState(false);  // 명소 표시 여부
+  const [isLoading, setIsLoading] = useState(false);  // 새로 추가: 로딩 상태
   const mapRef = useRef(null);  // MapView에 대한 참조
 
   // Google Maps API 키 설정 (환경 변수로 저장하는 것이 좋음)
   const GOOGLE_MAPS_APIKEY = 'AIzaSyBnVeoo1KPt7cjYr8Sc2Cnc-9sGhQRwYFg';
 
+  // 현재 위치를 가져오는 함수 (수정됨)
+  const getCurrentLocation = async () => {
+    try {
+      setIsLoading(true);  // 새로 추가: 로딩 시작
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        console.log('Location permission not granted');
+        return null;
+      }
+      
+      const locationResult = await Location.getCurrentPositionAsync({
+        accuracy: Location.Accuracy.Balanced,  // 새로 추가: 정확도를 Balanced로 조정
+        timeout: 10000,  // 새로 추가: 10초 타임아웃 설정
+      });
+      return locationResult.coords;
+    } catch (error) {
+      console.error('Error getting location:', error);
+      return null;
+    } finally {
+      setIsLoading(false);  // 새로 추가: 로딩 종료
+    }
+  };
+
   // 컴포넌트 마운트 시 현재 위치 가져오기
   useEffect(() => {
     const getLocation = async () => {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status === 'granted') {
-        const locationResult = await Location.getCurrentPositionAsync({
-          accuracy: Location.Accuracy.High,
-        });
-        setLocation(locationResult.coords);
-      } else {
-        console.log('Location permission not granted');
+      const location = await getCurrentLocation();
+      if (location) {
+        setPresentLocation(location);
       }
     };
 
     getLocation();
   }, []);
+
+  // 현재 위치 재설정 함수 (수정됨)
+  const resetCurrentLocation = async () => {
+    const newLocation = await getCurrentLocation();
+    if (newLocation) {
+      setPresentLocation(newLocation);
+      // 현재 위치로 지도 이동
+      if (mapRef.current) {
+        mapRef.current.animateToRegion({
+          latitude: newLocation.latitude,
+          longitude: newLocation.longitude,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }, 1000);
+      }
+    }
+  };
 
   // 선택된 도시와 명소를 모두 포함하는 지도 영역 계산
   const calculateRegion = (city) => {
@@ -166,7 +202,6 @@ export default function App() {
               }}
               title="현재 위치"
               description="여기에 있습니다"
-              image={cityMarkerImg}
             />
 
             {/* 도시 및 명소 마커 */}
@@ -199,15 +234,30 @@ export default function App() {
               <Text style={styles.clearButtonText}>X</Text>
             </TouchableOpacity>
           )}
+          {/* 현재 위치 재설정 버튼 (수정됨) */}
+          <TouchableOpacity 
+            style={[styles.resetLocationButton, isLoading && styles.disabledButton]} 
+            onPress={resetCurrentLocation}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <ActivityIndicator color="#000" />
+            ) : (
+              <Text style={styles.resetLocationButtonText}>📍</Text>
+            )}
+          </TouchableOpacity>
         </>
       ) : (
-        <Text>맵을 로딩 합니다...</Text>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#0000ff" />
+          <Text style={styles.loadingText}>맵을 로딩 중입니다...</Text>
+        </View>
       )}
     </View>
   );
 }
 
-// 스타일 정의
+// 스타일 정의 (수정 및 추가됨)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -233,5 +283,32 @@ const styles = StyleSheet.create({
   clearButtonText: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  resetLocationButton: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    backgroundColor: 'white',
+    borderRadius: 25,
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 5,
+  },
+  resetLocationButtonText: {
+    fontSize: 24,
+  },
+  disabledButton: {
+    opacity: 0.7,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 10,
+    fontSize: 16,
   },
 });
