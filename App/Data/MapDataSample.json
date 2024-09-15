@@ -2,13 +2,13 @@
 	"startSpots" : {
 		"seoul" : {"coodination" : { "latitude" : 37.575297,"longitude" : 126.976808}}
 	},
-	"markedCity" :{
+	"markedCities" :{
 		"Buyeo" : {	
-			"coodination" : { "latitude" : 36.275927,"longitude" : 126.910563},
-			"markedLandmark" : [
-				{"name" : "성흥산 사랑나무", "coodination" : { "latitude" : 36.195904,"longitude" : 126.900202}},
-				{"name" : "궁남지 포룡정", "coodination" : { "latitude" : 36.268470,"longitude" : 126.909178}},
-				{"name" : "서동요 테마파크", "coodination" : { "latitude" : 36.145517,"longitude" : 126.823096}}
+			"coodinate" : { "latitude" : 36.275927,"longitude" : 126.910563},
+			"markedLandmarks" : [
+				{"name" : "성흥산 사랑나무", "coodinate" : { "latitude" : 36.195904,"longitude" : 126.900202}},
+				{"name" : "궁남지 포룡정", "coodinate" : { "latitude" : 36.268470,"longitude" : 126.909178}},
+				{"name" : "서동요 테마파크", "coodinate" : { "latitude" : 36.145517,"longitude" : 126.823096}}
 		]
 		}
 	}

@@ -7,6 +7,7 @@ import MapDataSample from '../Data/MapDataSample.json'
 
 export default function App() {
   const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png");
+  const landmarkMarkerImg = require("../assets/MapViewIcons/landmarkMarker.png");
   const GOOGLE_MAPS_API_KEY = 'AIzaSyBnVeoo1KPt7cjYr8Sc2Cnc-9sGhQRwYFg';
 
   const [presentLocation, setLocation] = useState(null);
@@ -31,6 +32,21 @@ export default function App() {
     getLocation();
   }, []);
 
+  const ShowMarkedLandmarks = (markedLandmarks) => {
+    return markedLandmarks.map((landmark, index) => (
+      <Marker
+        key={index}
+        coordinate={{
+          latitude: landmark.coodinate.latitude,
+          longitude: landmark.coodinate.longitude,
+        }}
+        title={`${landmark.name}`}
+        description="대충 명소지"
+        image={landmarkMarkerImg}
+      />
+    ));
+  };
+
   return (
     <View style={styles.container}>
       {presentLocation ? (
@@ -52,7 +68,7 @@ export default function App() {
             description="여기에 있습니다"
             image={cityMarkerImg}
           />
-
+          {ShowMarkedLandmarks(MapDataSample.markedCities.Buyeo.markedLandmarks)}
           {/* 샘플 목적지에 마커를 띄우는 코드 */}
           {/* <Marker
             coordinate={destination}
