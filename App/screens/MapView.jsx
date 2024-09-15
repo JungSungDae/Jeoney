@@ -4,7 +4,7 @@ import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
 export default function App() {
-	const markerImg = require("../assets/MapViewIcons/marker.png")
+	const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png")
 
 	//현재 사용자의 위치를 구하는 함수 (지도를 켰을 때, uesEffect가 한번 실행 됨)
   const [presentLocation, setLocation] = useState(null);
@@ -45,7 +45,7 @@ export default function App() {
 					}}
 					title="현재 위치"
 					description="여기에 있습니다"
-					image={markerImg}
+					image={cityMarkerImg}
 				/>
 				</MapView>
       ) : (
