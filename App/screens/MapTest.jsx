@@ -32,6 +32,24 @@ export default function App() {
     getLocation();
   }, []);
 
+  //경로에서의 경유지를 보여주는 함수 + 해당 경유지의 명소 까지 보여줌
+  const ShowMarkedCities = (markedCities) => {
+    return markedCities.map((city, index) => (
+      <>
+        {ShowMarkedLandmarks(city.markedLandmarks)}
+        <Marker
+          key={index}
+          coordinate={{
+            latitude: city.coodinate.latitude,
+            longitude: city.coodinate.longitude,
+          }}
+          title={`${city.name}`}
+          description="경유지"
+          image={cityMarkerImg}
+        />
+      </>
+    ))
+  }
 
   //선택한 지역에 속해 있는 명소들을 마커로 보여주는 함수
   const ShowMarkedLandmarks = (markedLandmarks) => {
@@ -70,7 +88,10 @@ export default function App() {
             description="여기에 있습니다"
             image={cityMarkerImg}
           />
-          {ShowMarkedLandmarks(MapDataSample.markedCities.Buyeo.markedLandmarks)}
+
+          {/* 경유지의 도시와 그 도시의 명소에 마커를 찍음 */}
+          {ShowMarkedCities(MapDataSample.markedCities)}
+
           {/* 샘플 목적지에 마커를 띄우는 코드 */}
           {/* <Marker
             coordinate={destination}
