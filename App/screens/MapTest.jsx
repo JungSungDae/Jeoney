@@ -32,6 +32,8 @@ export default function App() {
     getLocation();
   }, []);
 
+
+  //선택한 지역에 속해 있는 명소들을 마커로 보여주는 함수
   const ShowMarkedLandmarks = (markedLandmarks) => {
     return markedLandmarks.map((landmark, index) => (
       <Marker
