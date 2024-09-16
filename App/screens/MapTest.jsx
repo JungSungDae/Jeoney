@@ -120,19 +120,20 @@ export default function App() {
     for (const point of points) {
       const cityDetails = await getCityDetails(point.latitude, point.longitude);
       if (cityDetails && cityDetails.name !== 'Unknown city') {
-        if (!citySet.has(cityDetails.name)) {
+        if (!citySet.has(cityDetails.name)) { 
           citySet.add(cityDetails.name);
           markerData.push(cityDetails);
         }
       }
     }
     
-    const filteredMarkerData = markerData.filter(
-      city => city.name !== destination.name
-    );
-    
+
+    //시작 지점(사용자가 설정)과 끝 지점(전주)을 경유지로 설정하면 안되므로 제외함
+    markerData.shift();
+    markerData.pop();
+
     setCities(Array.from(citySet));
-    setMarkers(filteredMarkerData);
+    setMarkers(markerData);
     setIsLoading(false); // 로딩 끝
   };
 
@@ -179,7 +180,10 @@ export default function App() {
   const handleSetStartPoint = async () => {
     const location = await fetchLocationFromSearch(searchInput);
     if (location) {
-      setStartLocation(location);
+      setStartLocation({
+        ...location,
+        name: searchInput // 시작 지점의 이름 저장
+      });
       setSearchInput('');
       setShowCities(true); // 시작 지점 설정 후 선과 도시 표시
     }
@@ -232,36 +236,34 @@ export default function App() {
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
+            showsUserLocation={true} // 사용자의 현재 위치를 표시
+            showsMyLocationButton={true} // 현재 위치로 이동하는 버튼 표시
           >
-            {/* 현재 위치 마커 */}
-            <Marker
-              coordinate={{
-                latitude: presentLocation.latitude,
-                longitude: presentLocation.longitude,
-              }}
-              title="현재 위치"
-              description="여기에 있습니다"
-            />
-
             {/* 시작 지점 마커 */}
             {startLocation && (
-              <Marker coordinate={startLocation} title="시작 지점" />
+              <Marker 
+                coordinate={startLocation} 
+                title="시작 지점"
+                pinColor="green" // 시작 지점을 구분하기 위해 색상 변경
+              />
             )}
             {/* 고정 도착 지점 마커 */}
-            <Marker coordinate={destination} title={destination.name}  />
+            <Marker 
+              coordinate={destination} 
+              title={destination.name}
+              pinColor="red" // 도착 지점을 구분하기 위해 색상 변경
+            />
 
             {/* 시작 지점과 도착 지점 사이의 선 */}
             {startLocation && (
-              <>
-                <Polyline
-                  coordinates={[startLocation, destination]}
-                  strokeColor="#000"
-                  strokeWidth={3}
-                />
-              </>
+              <Polyline
+                coordinates={[startLocation, destination]}
+                strokeColor="#000"
+                strokeWidth={3}
+              />
             )}
 
-            {/* 도시 마커들 */}
+            {/* 경유 도시 마커들 */}
             {markers.map((marker, index) => (
               <Marker
                 key={index}
