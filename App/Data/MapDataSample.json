@@ -1,0 +1,27 @@
+{	
+	"startSpots" : {
+		"seoul" : {"coordinate" : { "latitude" : 37.575297,"longitude" : 126.976808}}
+	},
+	"markedCities" :[
+		{	
+			"name" : "Buyeo",
+			"coordinate" : { "latitude" : 36.275927,"longitude" : 126.910563},
+			"markedLandmarks" : 
+			[
+				{"name" : "성흥산 사랑나무", "coordinate" : { "latitude" : 36.195904,"longitude" : 126.900202}},
+				{"name" : "궁남지 포룡정", "coordinate" : { "latitude" : 36.268470,"longitude" : 126.909178}},
+				{"name" : "서동요 테마파크", "coordinate" : { "latitude" : 36.145517,"longitude" : 126.823096}}
+			]
+		},
+		{	
+			"name" : "Gunsan",
+			"coordinate" : { "latitude" : 35.979703,"longitude" : 126.715933},
+			"markedLandmarks" : 
+			[
+				{"name" : "경암동 철길 마을", "coordinate" : { "latitude" : 35.981218,"longitude" : 126.735493}},
+				{"name" : "초원 사진관", "coordinate" : { "latitude" : 35.9739146,"longitude" : 126.7244565}},
+				{"name" : "동국사", "coordinate" : { "latitude" : 35.9825791,"longitude" : 126.7077329}}
+			]
+		}
+	]
+}	

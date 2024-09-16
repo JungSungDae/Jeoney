@@ -8,13 +8,13 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/jeoneyIcon.png",
-      "resizeMode": "contain",
+      "resizeMode": "contain", 
       "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true,
       "config": {
-        "googleMapsApiKey": "AIzaSyBnVeoo1KPt7cjYr8Sc2Cnc-9sGhQRwYFg"
+        "googleMapsApiKey": "AIzaSyDtJQpj4yQtxLnzZtuu2N9jLl98gcRhzxA"
       }
     },
     "android": {
@@ -24,7 +24,7 @@
       },
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyBnVeoo1KPt7cjYr8Sc2Cnc-9sGhQRwYFg"
+          "apiKey": "AIzaSyDtJQpj4yQtxLnzZtuu2N9jLl98gcRhzxA"
         }
       }
     },
