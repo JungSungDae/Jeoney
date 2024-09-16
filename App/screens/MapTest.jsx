@@ -2,12 +2,14 @@ import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView } from 'react-native';
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
+import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
 
 const { width, height } = Dimensions.get('window');
 
 export default function App() {
   // 도시 마커 이미지와 랜드마크 마커 이미지 경로
   const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png");
+  const landmarkMarkerImg = require("../assets/MapViewIcons/landmarkMarker.png"); // 랜드마크 마커 이미지 추가
 
   // 상태 변수 선언
   const [presentLocation, setPresentLocation] = useState(null); // 현재 위치
@@ -19,6 +21,7 @@ export default function App() {
   const [showLandmarks, setShowLandmarks] = useState(false); // 랜드마크 표시 여부
   const [searchInput, setSearchInput] = useState(''); // 검색 입력값
   const [selectedCity, setSelectedCity] = useState(null); // 선택된 도시
+  const [landmarks, setLandmarks] = useState([]); // 선택된 도시의 랜드마크 리스트
   const mapRef = useRef(null); // MapView 참조
 
   // 구글 지도 API 키
@@ -127,7 +130,6 @@ export default function App() {
       }
     }
     
-
     //시작 지점(사용자가 설정)과 끝 지점(전주)을 경유지로 설정하면 안되므로 제외함
     markerData.shift();
     markerData.pop();
@@ -160,6 +162,14 @@ export default function App() {
     setSelectedCity(city);
     setShowLandmarks(true);
     
+    // MapDataSample.json에서 선택된 도시의 랜드마크 찾기
+    const selectedCityData = mapData.markedCities.find(c => c.name === city.name);
+    if (selectedCityData) {
+      setLandmarks(selectedCityData.markedLandmarks);
+    } else {
+      setLandmarks([]);
+    }
+    
     if (mapRef.current) {
       mapRef.current.animateToRegion({
         latitude: city.latitude,
@@ -174,6 +184,7 @@ export default function App() {
   const clearSelection = () => {
     setSelectedCity(null);
     setShowLandmarks(false);
+    setLandmarks([]);
   };
 
   // 시작 지점을 설정하는 함수
@@ -215,6 +226,7 @@ export default function App() {
     setShowCities(false);
     setMarkers([]);
     setCities([]);
+    clearSelection();
   };
 
   return (
@@ -282,6 +294,18 @@ export default function App() {
                 strokeWidth={2}
               />
             )}
+            {/* 랜드마크 마커 추가 */}
+            {showLandmarks && landmarks.map((landmark, index) => (
+              <Marker
+                key={`landmark-${index}`}
+                coordinate={{
+                  latitude: landmark.coordinate.latitude,
+                  longitude: landmark.coordinate.longitude
+                }}
+                title={landmark.name}
+                image={landmarkMarkerImg}
+              />
+            ))}
           </MapView>
 
           <KeyboardAvoidingView></KeyboardAvoidingView>
