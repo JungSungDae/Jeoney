@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
@@ -23,6 +23,9 @@ export default function App() {
   const [selectedCity, setSelectedCity] = useState(null); // 선택된 도시
   const [landmarks, setLandmarks] = useState([]); // 선택된 도시의 랜드마크 리스트
   const mapRef = useRef(null); // MapView 참조
+
+  // 경로 탐색 여부를 확인하는 상태 추가
+  const [isRouteSearched, setIsRouteSearched] = useState(false);
 
   // 구글 지도 API 키
   const GOOGLE_MAPS_APIKEY = 'AIzaSyDtJQpj4yQtxLnzZtuu2N9jLl98gcRhzxA';
@@ -189,14 +192,31 @@ export default function App() {
 
   // 시작 지점을 설정하는 함수
   const handleSetStartPoint = async () => {
+    // 기존 마커와 경로 초기화
     const location = await fetchLocationFromSearch(searchInput);
+
+    // 입력 내용이 유효한지에 관한 예외처리
+    if (!location){
+      if (searchInput == ""){ //아무것도 입력을 하지 않았을 때
+        alert("가고자 하는 지역을 입력해주세요")
+      }
+      else{ // 입력한 지역이 존재하지 않을 때
+        alert("해당 지역 존재하지 않음")
+      }
+      return;
+    }
+
+
+    handleClear();
+    
     if (location) {
       setStartLocation({
         ...location,
         name: searchInput // 시작 지점의 이름 저장
       });
       setSearchInput('');
-      setShowCities(true); // 시작 지점 설정 후 선과 도시 표시
+      setShowCities(true);
+      setIsRouteSearched(true); // 경로 탐색 완료 표시
     }
   };
 
@@ -227,6 +247,7 @@ export default function App() {
     setMarkers([]);
     setCities([]);
     clearSelection();
+    setIsRouteSearched(false); // 경로 탐색 상태 초기화
   };
 
   return (
@@ -308,18 +329,27 @@ export default function App() {
             ))}
           </MapView>
 
-          <KeyboardAvoidingView></KeyboardAvoidingView>
-          <View style={styles.controls}>
-            <TextInput
-              style={styles.searchInput}
-              value={searchInput}
-              onChangeText={setSearchInput}
-              placeholder="시작 지점 검색"
-            />
-            <Button title="설정" onPress={handleSetStartPoint} />
-            {showLandmarks && <Button title="랜드마크 닫기" onPress={clearSelection} />}
-            <Button title="모두 지우기" onPress={handleClear} />
-          </View>
+          <KeyboardAvoidingView 
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.searchContainer}
+          >
+            <View style={styles.searchBox}>
+              <TextInput
+                style={styles.searchInput}
+                value={searchInput}
+                onChangeText={setSearchInput}
+                placeholder="시작 지점 검색"
+              />
+              <Button title="설정" onPress={handleSetStartPoint} />
+            </View>
+          </KeyboardAvoidingView>
+
+          {isRouteSearched && (
+            <View style={styles.bottomControls}>
+              {showLandmarks && <Button title="랜드마크 닫기" onPress={clearSelection} />}
+              <Button title="모두 지우기" onPress={handleClear} />
+            </View>
+          )}
         </>
       ) : (
         <ActivityIndicator size="large" color="#0000ff" />
@@ -331,27 +361,50 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   map: {
     width: width,
-    height: height - 100,
+    height: height,
   },
-  controls: {
-    paddingLeft : "10%",
-    paddingRight : "10%",
-    marginBottom : "5%",
+  searchContainer: {
+    position: 'absolute',
+    top: 40,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    zIndex: 1,
+  },
+  searchBox: {
     flexDirection: 'row',
-    gap : 5,
+    backgroundColor: 'white',
+    borderRadius: 20,
     padding: 10,
+    width: '90%',
+    alignItems: 'center',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   searchInput: {
-    borderColor: 'gray',
-    borderWidth: 1,
-    borderRadius: 5,
+    flex: 1,
+    marginRight: 10,
     padding: 5,
-    width: '70%',
+  },
+  bottomControls: {
+    position: 'absolute',
+    bottom: 20,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 10,
   },
   loadingContainer: {
     position: 'absolute',
