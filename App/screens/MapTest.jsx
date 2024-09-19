@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInpu
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
+import MenuBar from './MenuBar'; // MenuBar.jsx 파일 import
 
 const { width, height } = Dimensions.get('window');
 
@@ -354,6 +355,10 @@ export default function App() {
       ) : (
         <ActivityIndicator size="large" color="#0000ff" />
       )}
+
+      {/* {MenuBar 추가} */}
+      <MenuBar />
+
     </View>
   );
 }
