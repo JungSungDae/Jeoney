@@ -5,7 +5,7 @@ import React from 'react'
 import Main from "./screens/Main";
 import MapTest from "./screens/MapTest";
 import MenuBar from "./screens/MainWindow";
-import MissionFoodModal from "./screens/MissionFoodModal";
+import MissionFoodModal from "./screens/MyWindow";
 import StartButtonWindow from "./screens/CrewWindow";
 
 const Stack = createStackNavigator();
@@ -23,7 +23,7 @@ const Stack = createStackNavigator();
         <Stack.Screen 
           name="MenuBar" 
           component={MenuBar} 
-          options={{ headerShown: false }}  // MainWindow 화면 헤더 제거
+          options={{ headerShown: false }}  // MenuBar 화면 헤더 제거
         />
         <Stack.Screen 
           name="MissionFoodModal" 
