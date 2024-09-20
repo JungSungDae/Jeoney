@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   topBar: {
     marginBottom: 0, // 프로필과 축제 버튼 사이 간격을 줄임
     alignItems: 'center',
-    marginTop: -105, // 상단에서 더 가까워지도록
+    marginTop: '-25%', // 상단에서 더 가까워지도록
   },
   profileIcon: {
     width: 380,  // 적절한 크기로 조정
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 115,  // 축제 이미지가 더 위로 오도록 조정
+    marginBottom: '28%',  // 축제 이미지가 더 위로 오도록 조정
   },
   mainImage: {
     width: '115%',
@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
   buttonGroup: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 30,
-    marginBottom: 70, // 버튼들이 더 위로 오게 조정
+    marginTop: '7%',
+    marginBottom: '20%', // 버튼들이 더 위로 오게 조정
   },
   leftColumn: {
     justifyContent: 'center',
@@ -112,12 +112,11 @@ const styles = StyleSheet.create({
   buttonIcon: {
     width: 190,
     height: 80,
-    marginBottom: 10, // 이벤트와 스토어 사이 간격 조정
+    marginBottom: '7%', // 이벤트와 스토어 사이 간격 조정
   },
   w_buttonIcon: {
     width: 170,
     height: 170,
-    marginBottom: 0,
   },
 });
 
