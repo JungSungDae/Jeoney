@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native';
+import MenuBar from './MenuBar';
 
 const MainWindow = () => {
   // 버튼 클릭 핸들러
@@ -59,6 +60,8 @@ const MainWindow = () => {
           </TouchableOpacity>
         </View>
       </View>
+      {/* MenuBar를 하단에 고정 */}
+      <MenuBar />
     </View>
   );
 };
@@ -66,34 +69,35 @@ const MainWindow = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 0,
     backgroundColor: '#F5F5F5',
-    borderWidth : 5
   },
   topBar: {
-    marginBottom: 30, //프로필 축제 버튼 사이 간격
+    marginBottom: 0, // 프로필과 축제 버튼 사이 간격을 줄임
     alignItems: 'center',
+    marginTop: -105, // 상단에서 더 가까워지도록
   },
   profileIcon: {
-    width: 400,
-    height: 90,
+    width: 380,  // 적절한 크기로 조정
+    height: 380, // 적절한 크기로 조정
+    resizeMode: 'contain',  // 이미지를 버튼에 맞게 조정
   },
   imageContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 0,
+    marginBottom: 115,  // 축제 이미지가 더 위로 오도록 조정
   },
   mainImage: {
-    width: '100%',
+    width: '115%',
     height: undefined,
     aspectRatio: 1,
   },
   buttonGroup: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 0,
-    paddingHorizontal: 0, // 왼쪽과 오른쪽 버튼 간격 추가
+    marginTop: 30,
+    marginBottom: 70, // 버튼들이 더 위로 오게 조정
   },
   leftColumn: {
     justifyContent: 'center',
@@ -104,16 +108,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flex: 1,
-    marginTop: 0, // 이벤트와 스토어 간 간격 추가
   },
   buttonIcon: {
-    width: 160,
-    height: 70,
-    marginBottom: 20, // 이벤트와 스토어 사이 간격 조정
+    width: 190,
+    height: 80,
+    marginBottom: 10, // 이벤트와 스토어 사이 간격 조정
   },
   w_buttonIcon: {
-    width: 150,
-    height: 150,
+    width: 170,
+    height: 170,
     marginBottom: 0,
   },
 });
