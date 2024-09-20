@@ -15,34 +15,36 @@ const CrewWindow = ({navigation}) => {
       <ScrollView >
         <View style={styles.crewClubsContainer}>
           {CrewClubSmaple.rooms.map((room, index) => (
-            <View key={index} style={styles.roomViewContainer}>
-              <View style={styles.leftContents}>
-                <Text style={styles.titleText}>
-                  {room.title}
-                </Text>
-                <View style={styles.tagsContainer}>
-                  {room.tags.map((tag, tagIndex) => (
-                    <Text key={tagIndex} style={styles.tagText}>
-                      {"#" + tag}
-                    </Text>
-                  ))}
-                </View>	
+            <TouchableOpacity onPress={() => {navigation.navigate("CrewRoomWin")}}>
+                  <View key={index} style={styles.roomViewContainer}>
+                    <View style={styles.leftContents}>
+                      <Text style={styles.titleText}>
+                        {room.title}
+                      </Text>
+                      <View style={styles.tagsContainer}>
+                        {room.tags.map((tag, tagIndex) => (
+                          <Text key={tagIndex} style={styles.tagText}>
+                            {"#" + tag}
+                          </Text>
+                        ))}
+                      </View>	
+                    </View>
+                    
+                    <View style={styles.rightContents}>
+                      <Text style={[
+                        styles.currentMemberCountText,
+                        { color: getMemberCountColor(room.currentMemberCount, room.maxMemberCount) }
+                      ]}>
+                        {room.currentMemberCount}
+                      </Text>
+                      <Text style={styles.maxMemberCountText}>
+                        {"/ " + room.maxMemberCount}
+                      </Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+                ))}
               </View>
-              
-              <View style={styles.rightContents}>
-                <Text style={[
-                  styles.currentMemberCountText,
-                  { color: getMemberCountColor(room.currentMemberCount, room.maxMemberCount) }
-                ]}>
-                  {room.currentMemberCount}
-                </Text>
-                <Text style={styles.maxMemberCountText}>
-                  {"/ " + room.maxMemberCount}
-                </Text>
-              </View>
-            </View>
-          ))}
-        </View>
       </ScrollView>
       <MenuBar navigation={navigation}/>
     </View>

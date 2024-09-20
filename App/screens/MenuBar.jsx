@@ -6,7 +6,7 @@ export default function MenuBar({ navigation }) {
     <View style={styles.container}>
       <View style={styles.menuBar}>
         <TouchableOpacity style={styles.menuItem} onPress = {() => navigation.navigate('MainWindow')}>
-          { <Image source={require('../assets/MenuIcons/main.png')} style={styles.icon} /> }
+          { <Image source={require('../assets/MenuIcons/MainIcon.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>메인</Text>
         </TouchableOpacity>
 
@@ -16,12 +16,12 @@ export default function MenuBar({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuItem} onPress = {() => navigation.navigate('CrewWindow')}>
-          { <Image source={require('../assets/MenuIcons/crew.png')} style={styles.icon} /> }
+          { <Image source={require('../assets/MenuIcons/CrewIcon.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>크루</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.menuItem} onPress = {() => navigation.navigate('MyWindow')}>
-          { <Image source={require('../assets/MenuIcons/my.png')} style={styles.icon} /> }
+          { <Image source={require('../assets/MenuIcons/MyIcon.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>마이</Text>
         </TouchableOpacity>
       </View>

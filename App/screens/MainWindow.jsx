@@ -46,13 +46,13 @@ const MainWindow = ({navigation}) => {
 
         {/* 오른쪽 이벤트와 스토어 버튼 */}
         <View style={styles.rightColumn}>
-          <TouchableOpacity onPress={() => handlePress('이벤트')}>
+          <TouchableOpacity onPress={() => navigation.navigate('EventWindow')}>
             <Image
               style={styles.buttonIcon}
               source={require('../assets/MainWindowIcon/Event.png')}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => handlePress('스토어')}>
+          <TouchableOpacity onPress={() => navigation.navigate("StoreWindow")}>
             <Image
               style={styles.buttonIcon}
               source={require('../assets/MainWindowIcon/Store.png')}
