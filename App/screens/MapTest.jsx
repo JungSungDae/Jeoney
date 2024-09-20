@@ -379,7 +379,7 @@ const styles = StyleSheet.create({
   },
   map: {
     width: width,
-    height: height - 120,
+    height: height-38,
   },
   searchContainer: {
     position: 'absolute',
@@ -412,7 +412,7 @@ const styles = StyleSheet.create({
   },
   bottomControls: {
     position: 'absolute',
-    bottom: 80, 
+    bottom: 20,
     left: 0,
     right: 0,
     flexDirection: 'row',
