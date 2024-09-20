@@ -10,6 +10,9 @@ import StartButtonWindow from "./screens/StartButtonWindow";
 import MainWindow from "./screens/MainWindow";
 import MyWindow from "./screens/MyWindow";
 import CrewWindow from "./screens/CrewWindow";
+import EventWindow from "./screens/EventWindow";
+import CrewRoomWin from "./screens/CrewRoomWindow";
+import StoreWindow from "./screens/StoreWindow";
 
 const Stack = createStackNavigator();
 
@@ -57,6 +60,21 @@ const Stack = createStackNavigator();
           name="CrewWindow" 
           component={CrewWindow} 
           options={{ headerShown: false }}  // MyWindow 화면 헤더 제거
+        />
+        <Stack.Screen 
+          name="EventWindow" 
+          component={EventWindow} 
+          options={{ headerShown: false }}  // EventWindow 화면 헤더 제거
+        />
+        <Stack.Screen 
+          name="CrewRoomWin" 
+          component={CrewRoomWin} 
+          options={{ headerShown: false }}  // EventWindow 화면 헤더 제거
+        />
+        <Stack.Screen 
+          name="StoreWindow" 
+          component={StoreWindow} 
+          options={{ headerShown: false }}  // EventWindow 화면 헤더 제거
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -2,12 +2,12 @@ import React from 'react';
 import { StyleSheet, ImageBackground, View } from 'react-native';
 import MenuBar from './MenuBar';
 
-const EventWindow = ({navigation}) => {
+const CrewRoomWin = ({navigation}) => {
   return (
     <View style={{flex : 1}}>
       {/* // ImageBackground 컴포넌트를 사용하여 배경 이미지 추가 */}
       <ImageBackground 
-        source={require('../assets/EventWindowIcons/EventIcon.png')} // 배경 이미지 경로
+        source={require('../assets/CrewRoomIcon/CrewRoomWindow.png')} // 배경 이미지 경로
         style={styles.background} 
         resizeMode="cover" // 배경 이미지가 화면에 꽉 차도록 설정
       />
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EventWindow;
+export default CrewRoomWin;
