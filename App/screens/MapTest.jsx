@@ -207,7 +207,6 @@ export default function App() {
       return;
     }
 
-
     handleClear();
     
     if (location) {
@@ -403,7 +402,7 @@ const styles = StyleSheet.create({
   },
   bottomControls: {
     position: 'absolute',
-    bottom: 320,
+    bottom: 80, 
     left: 0,
     right: 0,
     flexDirection: 'row',

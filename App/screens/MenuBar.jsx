@@ -1,29 +1,29 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function MenuBar() {
   return (
     <View style={styles.container}>
       <View style={styles.menuBar}>
-        <View style={styles.menuItem}>
+        <TouchableOpacity style={styles.menuItem} onPress = {() => alert("Hello")}>
           { <Image source={require('../assets/MenuIcons/main.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>메인</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.menuItem}>
+        <TouchableOpacity style={styles.menuItem} onPress = {() => alert("Hello")}>
           { <Image source={require('../assets/MenuIcons/map.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>지도</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.menuItem}>
+        <TouchableOpacity style={styles.menuItem} onPress = {() => alert("Hello")}>
           { <Image source={require('../assets/MenuIcons/crew.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>크루</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.menuItem}>
+        <TouchableOpacity style={styles.menuItem} onPress = {() => alert("Hello")}>
           { <Image source={require('../assets/MenuIcons/my.png')} style={styles.icon} /> }
           <Text style={styles.menuText}>마이</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
