@@ -1,16 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform, Modal, ScrollView, TouchableOpacity, Image } from 'react-native';
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
 import MenuBar from './MenuBar'; // MenuBar.jsx 파일 import 
+import CustomModalOverlay from './CustomModalOverlay'; // 경로는 실제 파일 위치에 맞게 조정하세요
 
 const { width, height } = Dimensions.get('window');
-
-export default function App() {
+export default function App({navigation}) {
   // 도시 마커 이미지와 랜드마크 마커 이미지 경로
-  const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png");
-  const landmarkMarkerImg = require("../assets/MapViewIcons/landmarkMarker.png"); // 랜드마크 마커 이미지 추가
+  const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png"); // 경유 도시 이미지
+  const landmarkMarkerImg = require("../assets/MapViewIcons/landmarkMarker.png"); // 랜드마크 마커 이미지
+  const coinImg = require("../assets/MissionModalIcons/coin.png"); // 코인 이미지
 
   // 상태 변수 선언
   const [presentLocation, setPresentLocation] = useState(null); // 현재 위치
@@ -98,10 +99,10 @@ export default function App() {
         const city = addressComponents.find(component =>
           component.types.includes('locality') || component.types.includes('administrative_area_level_1')
         );
-        const cityName = city ? city.long_name : 'Unknown city';
+        const missionTitle = city ? city.long_name : 'Unknown city';
 
         const placesResponse = await fetch(
-          `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(cityName)}&inputtype=textquery&fields=formatted_address,name,geometry&key=${GOOGLE_MAPS_APIKEY}&language=ko`
+          `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(missionTitle)}&inputtype=textquery&fields=formatted_address,name,geometry&key=${GOOGLE_MAPS_APIKEY}&language=ko`
         );
         const placesData = await placesResponse.json();
 
@@ -168,7 +169,8 @@ export default function App() {
     setShowLandmarks(true);
     
     // MapDataSample.json에서 선택된 도시의 랜드마크 찾기
-    const selectedCityData = mapData.markedCities.find(c => c.name === city.name);
+    const selectedCityData = mapData.markedCities.find(
+      c => c.name === city.name);
     if (selectedCityData) {
       setLandmarks(selectedCityData.markedLandmarks);
     } else {
@@ -271,24 +273,24 @@ export default function App() {
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
-            showsUserLocation={true} // 사용자의 현재 위치를 표시
-            showsMyLocationButton={true} // 현재 위치로 이동하는 버튼 표시
+            showsUserLocation={true}
+            showsMyLocationButton={true}
           >
             {/* 시작 지점 마커 */}
             {startLocation && (
               <Marker 
                 coordinate={startLocation} 
                 title="시작 지점"
-                pinColor="green" // 시작 지점을 구분하기 위해 색상 변경
+                pinColor="green"
               />
             )}
             {/* 고정 도착 지점 마커 */}
             <Marker 
               coordinate={destination} 
               title={destination.name}
-              pinColor="red" // 도착 지점을 구분하기 위해 색상 변경
+              pinColor="red"
             />
-
+  
             {/* 시작 지점과 도착 지점 사이의 선 */}
             {startLocation && (
               <Polyline
@@ -297,7 +299,7 @@ export default function App() {
                 strokeWidth={3}
               />
             )}
-
+  
             {/* 경유 도시 마커들 */}
             {markers.map((marker, index) => (
               <Marker
@@ -306,17 +308,9 @@ export default function App() {
                 title={marker.name}
                 image={cityMarkerImg}
                 onPress={() => handleCityPress(marker)}
-              />
+              >
+              </Marker>
             ))}
-            {/* 선택된 도시의 경계를 그리는 코드 */}
-            {/* {selectedCity && (
-              <Polygon
-                coordinates={drawCityBoundary(selectedCity)}
-                strokeColor="rgba(0,0,255,0.7)"
-                fillColor="rgba(0,0,255,0.3)"
-                strokeWidth={2}
-              />
-            )} */}
             {/* 랜드마크 마커 추가 */}
             {showLandmarks && landmarks.map((landmark, index) => (
               <Marker
@@ -330,7 +324,7 @@ export default function App() {
               />
             ))}
           </MapView>
-
+  
           <KeyboardAvoidingView 
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.searchContainer}
@@ -345,65 +339,64 @@ export default function App() {
               <Button title="설정" onPress={handleSetStartPoint} />
             </View>
           </KeyboardAvoidingView>
-
+  
           {isRouteSearched && (
             <View style={styles.bottomControls}>
               {showLandmarks && <Button title="랜드마크 닫기" onPress={clearSelection} />}
               <Button title="모두 지우기" onPress={handleClear} />
             </View>
           )}
+
+          <MenuBar navigation={navigation}/>
+
         </>
       ) : (
         <ActivityIndicator size="large" color="#0000ff" />
       )}
+      
 
-      {/* 모달창 구현 부 */}
-      <Button
-        title="모달 열기"
-        onPress={() => setModalVisible(true)}
-      />
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <View style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: 22,
-        }}>
-          <View style={{
-            margin: 20,
-            backgroundColor: 'white',
-            borderRadius: 20,
-            padding: 35,
-            alignItems: 'center',
-            shadowColor: '#000',
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 4,
-            elevation: 5,
-          }}>
-            <Text style={{
-              marginBottom: 15,
-              textAlign: 'center',
-            }}>모달 내용입니다!</Text>
-            <Button
-              title="모달 닫기"
-              onPress={() => setModalVisible(false)}
-            />
-          </View>
-        </View>
-      </Modal>
-
-      {/* {MenuBar 추가} */}
-      <MenuBar />
+      {/* 모달창 구현 */}
+      <CustomModalOverlay
+        isVisible={selectedCity}
+        onClose={() => 
+          {
+            setIsMissionModalOpened(false)
+            setShowCities(false)
+            setShowLandmarks(false)
+            setSelectedCity(null)
+          }}
+      > 
+        {selectedCity ? 
+        <ScrollView>
+          <Text style={styles.missionTitle}>
+          {"Mission in " + selectedCity["name"]}
+          </Text>
+          <View style={styles.horizontalLine}/>
+          <ScrollView horizontal={true}>
+            <View style={styles.missionsContainer}>
+              {landmarks.map((landmark, index) => 
+              { 
+                return(
+                  <View key={index} style={styles.missionContainer}>
+                    <Text style={styles.missionText}>
+                      {landmark["mission"]}
+                    </Text>
+                    <TouchableOpacity style={styles.challengeButton} onPress={() => alert("도전!")}>
+                      <Text style={{fontSize : 10}}>
+                        도전
+                      </Text>
+                      <Image source={coinImg}/>
+                    </TouchableOpacity>
+                  </View>
+                )
+              })}
+            </View>
+          </ScrollView>
+        </ScrollView>
+        :
+        null
+        }
+      </CustomModalOverlay>
     </View>
   );
 }
@@ -416,7 +409,7 @@ const styles = StyleSheet.create({
   },
   map: {
     width: width,
-    height: height - 120,
+    height: height-38,
   },
   searchContainer: {
     position: 'absolute',
@@ -449,7 +442,7 @@ const styles = StyleSheet.create({
   },
   bottomControls: {
     position: 'absolute',
-    bottom: 80, 
+    bottom: 20,
     left: 0,
     right: 0,
     flexDirection: 'row',
@@ -472,6 +465,45 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 16,
   },
+  missionTitle:{
+    textAlign: "left",
+    color:"#121212",
+    fontWeight : "bold",
+    fontSize : 27
+  },
+  horizontalLine :{
+    width : "100%",
+    height : 1.5,
+    backgroundColor : "black",
+    marginVertical : 10
+  },
+  missionsContainer : {
+    display : "flex",
+    gap : 15,
+    backgroundColor : "white",
+    paddingHorizontal : "3%",
+    paddingVertical : "4%",
+    borderRadius : 20
+  },
+  missionText : {
+    fontSize : 13,
+    fontWeight : "bold",
+    marginRight : 10
+  },
+  challengeButton : {
+    display : "flex",
+    flexDirection : "row",
+    gap : 5,
+    backgroundColor : "#D9D9D9",
+    borderRadius : 5,
+    padding : 2
+  },
+  missionContainer:{
+    display : "flex",
+    flexDirection : "row",
+    justifyContent : "space-between",
+    alignItems : "stretch"
+  }
 });
 
 

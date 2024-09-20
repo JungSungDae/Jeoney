@@ -169,7 +169,8 @@ export default function App() {
     setShowLandmarks(true);
     
     // MapDataSample.json에서 선택된 도시의 랜드마크 찾기
-    const selectedCityData = mapData.markedCities.find(c => c.name === city.name);
+    const selectedCityData = mapData.markedCities.find(
+      c => c.name === city.name);
     if (selectedCityData) {
       setLandmarks(selectedCityData.markedLandmarks);
     } else {
@@ -371,24 +372,26 @@ export default function App() {
           {"Mission in " + selectedCity["name"]}
           </Text>
           <View style={styles.horizontalLine}/>
-          <View style={styles.missionsContainer}>
-            {landmarks.map((landmark, index) => 
-            { 
-              return(
-                <View key={index} style={styles.missionContainer}>
-                  <Text style={styles.missionText}>
-                    {landmark["mission"]}
-                  </Text>
-                  <TouchableOpacity style={styles.challengeButton} onPress={() => alert("도전!")}>
-                    <Text style={{fontSize : 10}}>
-                      도전
+          <ScrollView horizontal={true}>
+            <View style={styles.missionsContainer}>
+              {landmarks.map((landmark, index) => 
+              { 
+                return(
+                  <View key={index} style={styles.missionContainer}>
+                    <Text style={styles.missionText}>
+                      {landmark["mission"]}
                     </Text>
-                    <Image source={coinImg}/>
-                  </TouchableOpacity>
-                </View>
-              )
-            })}
-          </View>
+                    <TouchableOpacity style={styles.challengeButton} onPress={() => alert("도전!")}>
+                      <Text style={{fontSize : 10}}>
+                        도전
+                      </Text>
+                      <Image source={coinImg}/>
+                    </TouchableOpacity>
+                  </View>
+                )
+              })}
+            </View>
+          </ScrollView>
         </ScrollView>
         :
         null
@@ -484,7 +487,8 @@ const styles = StyleSheet.create({
   },
   missionText : {
     fontSize : 13,
-    fontWeight : "bold"
+    fontWeight : "bold",
+    marginRight : 10
   },
   challengeButton : {
     display : "flex",
