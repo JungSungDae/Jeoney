@@ -307,15 +307,15 @@ export default function App() {
                 onPress={() => handleCityPress(marker)}
               />
             ))}
-            {/* 선택된 도시의 경계 */}
-            {selectedCity && (
+            {/* 선택된 도시의 경계를 그리는 코드 */}
+            {/* {selectedCity && (
               <Polygon
                 coordinates={drawCityBoundary(selectedCity)}
                 strokeColor="rgba(0,0,255,0.7)"
                 fillColor="rgba(0,0,255,0.3)"
                 strokeWidth={2}
               />
-            )}
+            )} */}
             {/* 랜드마크 마커 추가 */}
             {showLandmarks && landmarks.map((landmark, index) => (
               <Marker
@@ -358,7 +358,6 @@ export default function App() {
 
       {/* {MenuBar 추가} */}
       <MenuBar />
-      
     </View>
   );
 }
@@ -428,3 +427,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+
