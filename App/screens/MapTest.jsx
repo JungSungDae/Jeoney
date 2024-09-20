@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInpu
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
-import MenuBar from './MenuBar'; // MenuBar.jsx 파일 import
+import MenuBar from './MenuBar'; // MenuBar.jsx 파일 import 
 
 const { width, height } = Dimensions.get('window');
 
@@ -403,7 +403,7 @@ const styles = StyleSheet.create({
   },
   bottomControls: {
     position: 'absolute',
-    bottom: 76,
+    bottom: 320,
     left: 0,
     right: 0,
     flexDirection: 'row',
