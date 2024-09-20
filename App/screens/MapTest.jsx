@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform, Modal, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform, Modal, ScrollView, TouchableOpacity, Image } from 'react-native';
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
 import MenuBar from './MenuBar'; // MenuBar.jsx 파일 import 
 import CustomModalOverlay from './CustomModalOverlay'; // 경로는 실제 파일 위치에 맞게 조정하세요
-const { width, height } = Dimensions.get('window');
 
+const { width, height } = Dimensions.get('window');
 export default function App() {
   // 도시 마커 이미지와 랜드마크 마커 이미지 경로
   const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png"); // 경유 도시 이미지
@@ -371,21 +371,20 @@ export default function App() {
           {"Mission in " + selectedCity["name"]}
           </Text>
           <View style={styles.horizontalLine}/>
-          <View style={styles.missionContainer}>
+          <View style={styles.missionsContainer}>
             {landmarks.map((landmark, index) => 
             { 
               return(
-                <View key={index}>
+                <View key={index} style={styles.missionContainer}>
                   <Text style={styles.missionText}>
                     {landmark["mission"]}
                   </Text>
-                  {console.log(landmark)}
-                  {/* <TouchableOpacity>
-                    <Image source={coinImg}/>
-                    <Text>
+                  <TouchableOpacity style={styles.challengeButton} onPress={() => alert("도전!")}>
+                    <Text style={{fontSize : 10}}>
                       도전
                     </Text>
-                  </TouchableOpacity> */}
+                    <Image source={coinImg}/>
+                  </TouchableOpacity>
                 </View>
               )
             })}
@@ -475,7 +474,7 @@ const styles = StyleSheet.create({
     backgroundColor : "black",
     marginVertical : 10
   },
-  missionContainer : {
+  missionsContainer : {
     display : "flex",
     gap : 15,
     backgroundColor : "white",
@@ -486,7 +485,20 @@ const styles = StyleSheet.create({
   missionText : {
     fontSize : 13,
     fontWeight : "bold"
-
+  },
+  challengeButton : {
+    display : "flex",
+    flexDirection : "row",
+    gap : 5,
+    backgroundColor : "#D9D9D9",
+    borderRadius : 5,
+    padding : 2
+  },
+  missionContainer:{
+    display : "flex",
+    flexDirection : "row",
+    justifyContent : "space-between",
+    alignItems : "stretch"
   }
 });
 
