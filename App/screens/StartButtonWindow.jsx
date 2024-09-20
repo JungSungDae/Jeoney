@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Image, ImageBackground } from 'react-native';
 import MenuBar from './MenuBar'; // MenuBar 컴포넌트 가져오기
 
-export default function MapAPI() {
+export default function MapAPI({ navigation }) {
   return (
     // 배경 이미지를 ImageBackground로 설정
     <ImageBackground 
@@ -12,7 +12,7 @@ export default function MapAPI() {
       <View style={styles.container}>
         
         {/* 상단 버튼 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MapView')}>
           <Image
             source={require('../assets/StartButtonIcons/SoloStart.png')} // 상단 버튼에 로컬 이미지 추가
             style={styles.buttonImage}
@@ -20,7 +20,7 @@ export default function MapAPI() {
         </TouchableOpacity>
 
         {/* 하단 버튼 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => alert("그룹 러닝")}>
           <Image
             source={require('../assets/StartButtonIcons/CrewStart.png')} // 하단 버튼에 로컬 이미지 추가
             style={styles.buttonImage}
