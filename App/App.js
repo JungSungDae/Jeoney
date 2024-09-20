@@ -6,7 +6,7 @@ import Main from "./screens/Main";
 import MapTest from "./screens/MapTest";
 import MenuBar from "./screens/MainWindow";
 import MissionFoodModal from "./screens/MyWindow";
-import StartButtonWindow from "./screens/StartButtonWindow";
+import StartButtonWindow from "./screens/CrewWindow";
 
 const Stack = createStackNavigator();
 

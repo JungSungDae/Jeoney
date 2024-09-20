@@ -1,0 +1,35 @@
+{
+    "rooms" : 
+    [
+        {
+            "title" : "서울 to 전주",
+            "tags" : ["서울", "자전거", "20대"],
+            "currentMemberCount" : 7,
+            "maxMemberCount" : 10
+        },
+        {
+            "title" : "전주고 모여라",
+            "tags" : ["전주", "도보", "10대"],
+            "currentMemberCount" : 3,
+            "maxMemberCount" : 4
+        },
+        {
+            "title" : "순창에서 전주",
+            "tags" : ["순창", "도보", "40대"],
+            "currentMemberCount" : 1,
+            "maxMemberCount" : 5
+        },
+        {
+            "title" : "마이구미베어",
+            "tags" : ["구미", "자전거", "20대"],
+            "currentMemberCount" : 2,
+            "maxMemberCount" : 8
+        },
+        {
+            "title" : "나랑 걸을 사람",
+            "tags" : ["군산", "도보", "10대"],
+            "currentMemberCount" : 6,
+            "maxMemberCount" : 10
+        }
+    ]
+}
