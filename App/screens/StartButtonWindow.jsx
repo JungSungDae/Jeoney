@@ -28,7 +28,7 @@ export default function MapAPI({ navigation }) {
         </TouchableOpacity>
 
         {/* MenuBar 컴포넌트 추가 */}
-        <MenuBar />
+        <MenuBar navigation={navigation} />
       </View>
     </ImageBackground>
   );

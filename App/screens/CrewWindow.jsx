@@ -3,7 +3,7 @@ import { View, TouchableOpacity, StyleSheet, Image, Alert, Dimensions, Text, Scr
 import MenuBar from './MenuBar';
 import CrewClubSmaple from "../Data/CrewClubSmaple.json"
 
-const CrewWindow = () => {
+const CrewWindow = ({navigation}) => {
   const getMemberCountColor = (current, max) => {
     if (current == max) return "#FF7171";
     if (current / max >= 0.5) return "#FFAD5A";
@@ -44,7 +44,7 @@ const CrewWindow = () => {
           ))}
         </View>
       </ScrollView>
-      <MenuBar/>
+      <MenuBar navigation={navigation}/>
     </View>
   );
 };

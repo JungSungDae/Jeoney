@@ -31,7 +31,7 @@ export default function App({ navigation }) {
       </View>
 
       {/* MenuBar를 하단에 고정 */}
-      <MenuBar />
+      <MenuBar navigation={navigation} />
     </View>
   );
 }

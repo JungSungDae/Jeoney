@@ -4,7 +4,7 @@ import MenuBar from './MenuBar';
 
 const { width, height } = Dimensions.get('window'); // 현재 기기의 화면 크기를 가져옴
 
-const MainWindow = () => {
+const MainWindow = ({navigation}) => {
   const handlePress = (buttonName) => {
     Alert.alert(`${buttonName} 버튼이 클릭되었습니다.`);
   };
@@ -61,7 +61,7 @@ const MainWindow = () => {
         </View>
       </View>
       {/* MenuBar를 하단에 고정 */}
-      <MenuBar />
+      <MenuBar navigation={navigation}/>
     </View>
   );
 };

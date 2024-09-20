@@ -3,10 +3,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from 'react'  
 import Main from "./screens/Main";
-import MapTest from "./screens/MapTest";
+import MapView from "./screens/MapView";
 import MenuBar from "./screens/MainWindow";
 import MissionFoodModal from "./screens/MyWindow";
-import StartButtonWindow from "./screens/CrewWindow";
+import StartButtonWindow from "./screens/StartButtonWindow";
+import MainWindow from "./screens/MainWindow";
+import MyWindow from "./screens/MyWindow";
+import CrewWindow from "./screens/CrewWindow";
 
 const Stack = createStackNavigator();
 
@@ -37,8 +40,23 @@ const Stack = createStackNavigator();
         />
         <Stack.Screen 
           name="MapView" 
-          component={MapTest} 
-          options={{ headerShown: false }}  // MapTest 화면 헤더 제거
+          component={MapView} 
+          options={{ headerShown: false }}  // MapView 화면 헤더 제거
+        />
+        <Stack.Screen 
+          name="MainWindow" 
+          component={MainWindow} 
+          options={{ headerShown: false }}  // MainWindow 화면 헤더 제거
+        />
+        <Stack.Screen 
+          name="MyWindow" 
+          component={MyWindow} 
+          options={{ headerShown: false }}  // MyWindow 화면 헤더 제거
+        />
+        <Stack.Screen 
+          name="CrewWindow" 
+          component={CrewWindow} 
+          options={{ headerShown: false }}  // MyWindow 화면 헤더 제거
         />
       </Stack.Navigator>
     </NavigationContainer>
