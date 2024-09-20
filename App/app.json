@@ -8,7 +8,7 @@
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/jeoneyIcon.png",
-      "resizeMode": "contain", 
+      "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
@@ -26,10 +26,16 @@
         "googleMaps": {
           "apiKey": "AIzaSyDtJQpj4yQtxLnzZtuu2N9jLl98gcRhzxA"
         }
-      }
+      },
+      "package": "com.imnotyejun.App"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "13956da0-3b20-48ef-a0e2-f766e3099be8"
+      }
     }
   }
 }

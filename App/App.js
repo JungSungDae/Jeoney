@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
  const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
+      <Stack.Navigator initialRouteName="MainWindow">
         {/* 모든 화면에서 headerShown: false 적용 */}
         <Stack.Screen 
           name="Main" 
