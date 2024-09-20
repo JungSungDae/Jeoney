@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform, Modal } from 'react-native';
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
 import MenuBar from './MenuBar'; // MenuBar.jsx 파일 import 
-
+import CustomModalOverlay from './CustomModalOverlay'; // 경로는 실제 파일 위치에 맞게 조정하세요
 const { width, height } = Dimensions.get('window');
 
 export default function App() {
@@ -23,6 +23,7 @@ export default function App() {
   const [searchInput, setSearchInput] = useState(''); // 검색 입력값
   const [selectedCity, setSelectedCity] = useState(null); // 선택된 도시
   const [landmarks, setLandmarks] = useState([]); // 선택된 도시의 랜드마크 리스트
+  const [isMissionModalOpened, setIsMissionModalOpened] = useState(false); // 미션 모달창 띄울지에 대한 여부
   const mapRef = useRef(null); // MapView 참조
 
   // 경로 탐색 여부를 확인하는 상태 추가
@@ -207,6 +208,7 @@ export default function App() {
       return;
     }
 
+
     handleClear();
     
     if (location) {
@@ -269,24 +271,24 @@ export default function App() {
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
-            showsUserLocation={true} // 사용자의 현재 위치를 표시
-            showsMyLocationButton={true} // 현재 위치로 이동하는 버튼 표시
+            showsUserLocation={true}
+            showsMyLocationButton={true}
           >
             {/* 시작 지점 마커 */}
             {startLocation && (
               <Marker 
                 coordinate={startLocation} 
                 title="시작 지점"
-                pinColor="green" // 시작 지점을 구분하기 위해 색상 변경
+                pinColor="green"
               />
             )}
             {/* 고정 도착 지점 마커 */}
             <Marker 
               coordinate={destination} 
               title={destination.name}
-              pinColor="red" // 도착 지점을 구분하기 위해 색상 변경
+              pinColor="red"
             />
-
+  
             {/* 시작 지점과 도착 지점 사이의 선 */}
             {startLocation && (
               <Polyline
@@ -295,7 +297,7 @@ export default function App() {
                 strokeWidth={3}
               />
             )}
-
+  
             {/* 경유 도시 마커들 */}
             {markers.map((marker, index) => (
               <Marker
@@ -306,15 +308,6 @@ export default function App() {
                 onPress={() => handleCityPress(marker)}
               />
             ))}
-            {/* 선택된 도시의 경계를 그리는 코드 */}
-            {/* {selectedCity && (
-              <Polygon
-                coordinates={drawCityBoundary(selectedCity)}
-                strokeColor="rgba(0,0,255,0.7)"
-                fillColor="rgba(0,0,255,0.3)"
-                strokeWidth={2}
-              />
-            )} */}
             {/* 랜드마크 마커 추가 */}
             {showLandmarks && landmarks.map((landmark, index) => (
               <Marker
@@ -328,7 +321,7 @@ export default function App() {
               />
             ))}
           </MapView>
-
+  
           <KeyboardAvoidingView 
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.searchContainer}
@@ -343,20 +336,37 @@ export default function App() {
               <Button title="설정" onPress={handleSetStartPoint} />
             </View>
           </KeyboardAvoidingView>
-
+  
           {isRouteSearched && (
             <View style={styles.bottomControls}>
               {showLandmarks && <Button title="랜드마크 닫기" onPress={clearSelection} />}
               <Button title="모두 지우기" onPress={handleClear} />
             </View>
           )}
+          
+          <Button
+            title="모달 열기"
+            onPress={() => setIsMissionModalOpened(true)}
+          />
         </>
       ) : (
         <ActivityIndicator size="large" color="#0000ff" />
       )}
-
-      {/* {MenuBar 추가} */}
-      <MenuBar />
+      
+      <CustomModalOverlay
+        isVisible={isMissionModalOpened}
+        onClose={() => 
+          {
+            setIsMissionModalOpened(false)
+            setShowCities(false)
+            setShowLandmarks(false)
+          }}
+      >
+        <Text style={{
+          marginBottom: 15,
+          textAlign: 'center',
+        }}>모달 내용입니다!</Text>
+      </CustomModalOverlay>
     </View>
   );
 }

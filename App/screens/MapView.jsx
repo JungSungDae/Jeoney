@@ -23,6 +23,7 @@ export default function App() {
   const [searchInput, setSearchInput] = useState(''); // 검색 입력값
   const [selectedCity, setSelectedCity] = useState(null); // 선택된 도시
   const [landmarks, setLandmarks] = useState([]); // 선택된 도시의 랜드마크 리스트
+  const [isMissionModalOpened, setIsMissionModalOpened] = useState(false); // 미션 모달창 띄울지에 대한 여부
   const mapRef = useRef(null); // MapView 참조
 
   // 경로 탐색 여부를 확인하는 상태 추가
@@ -355,6 +356,51 @@ export default function App() {
       ) : (
         <ActivityIndicator size="large" color="#0000ff" />
       )}
+
+      {/* 모달창 구현 부 */}
+      <Button
+        title="모달 열기"
+        onPress={() => setModalVisible(true)}
+      />
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: 22,
+        }}>
+          <View style={{
+            margin: 20,
+            backgroundColor: 'white',
+            borderRadius: 20,
+            padding: 35,
+            alignItems: 'center',
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 4,
+            elevation: 5,
+          }}>
+            <Text style={{
+              marginBottom: 15,
+              textAlign: 'center',
+            }}>모달 내용입니다!</Text>
+            <Button
+              title="모달 닫기"
+              onPress={() => setModalVisible(false)}
+            />
+          </View>
+        </View>
+      </Modal>
 
       {/* {MenuBar 추가} */}
       <MenuBar />
