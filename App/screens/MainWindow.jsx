@@ -1,22 +1,22 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Image, Alert, Dimensions } from 'react-native';
 import MenuBar from './MenuBar';
 
+const { width, height } = Dimensions.get('window'); // 현재 기기의 화면 크기를 가져옴
+
 const MainWindow = () => {
-  // 버튼 클릭 핸들러
   const handlePress = (buttonName) => {
     Alert.alert(`${buttonName} 버튼이 클릭되었습니다.`);
   };
 
   return (
     <View style={styles.container}>
-
       {/* 상단 프로필 버튼 */}
       <View style={styles.topBar}>
         <TouchableOpacity onPress={() => handlePress('프로필')}>
           <Image
             style={styles.profileIcon}
-            source={require('../assets/MainWindowIcon/Profile.png')} // 프로필 이미지 추가
+            source={require('../assets/MainWindowIcon/Profile.png')}
           />
         </TouchableOpacity>
       </View>
@@ -26,8 +26,8 @@ const MainWindow = () => {
         <TouchableOpacity onPress={() => handlePress('축제')}>
           <Image
             style={styles.mainImage}
-            source={require('../assets/MainWindowIcon/FestivalPicture.png')} // 축제 이미지 추가
-            resizeMode="contain" // 이미지가 화면에 꽉 차도록 설정
+            source={require('../assets/MainWindowIcon/FestivalPicture.png')}
+            resizeMode="contain"
           />
         </TouchableOpacity>
       </View>
@@ -39,7 +39,7 @@ const MainWindow = () => {
           <TouchableOpacity onPress={() => handlePress('날씨')}>
             <Image
               style={styles.w_buttonIcon}
-              source={require('../assets/MainWindowIcon/Weather.png')} // 날씨 이미지 추가
+              source={require('../assets/MainWindowIcon/Weather.png')}
             />
           </TouchableOpacity>
         </View>
@@ -49,13 +49,13 @@ const MainWindow = () => {
           <TouchableOpacity onPress={() => handlePress('이벤트')}>
             <Image
               style={styles.buttonIcon}
-              source={require('../assets/MainWindowIcon/Event.png')} // 이벤트 이미지 추가
+              source={require('../assets/MainWindowIcon/Event.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => handlePress('스토어')}>
             <Image
               style={styles.buttonIcon}
-              source={require('../assets/MainWindowIcon/Store.png')} // 스토어 이미지 추가
+              source={require('../assets/MainWindowIcon/Store.png')}
             />
           </TouchableOpacity>
         </View>
@@ -73,31 +73,31 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
   },
   topBar: {
-    marginBottom: 0, // 프로필과 축제 버튼 사이 간격을 줄임
+    marginBottom: 0,
     alignItems: 'center',
-    marginTop: '-25%', // 상단에서 더 가까워지도록
+    marginTop: height * 0, // 화면 높이에 따라 조정
   },
   profileIcon: {
-    width: 380,  // 적절한 크기로 조정
-    height: 380, // 적절한 크기로 조정
-    resizeMode: 'contain',  // 이미지를 버튼에 맞게 조정
+    width: width * 0.9,  // 기기 너비의 90%에 해당하는 크기로 조정
+    height: width * 0.4, // 기기 너비의 40%를 높이로 설정
+    resizeMode: 'contain',
   },
   imageContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: '28%',  // 축제 이미지가 더 위로 오도록 조정
+    marginBottom: height * 0.14,  // 화면 높이에 따라 축제 이미지 위치 조정
   },
   mainImage: {
-    width: '115%',
+    width: '110%',  // 너비의 110% 차지
     height: undefined,
-    aspectRatio: 1,
+    aspectRatio: 1, // 정사각형 비율 유지
   },
   buttonGroup: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: '7%',
-    marginBottom: '20%', // 버튼들이 더 위로 오게 조정
+    marginTop: height * -0.1,  // 화면 높이에 따라 위로 조정
+    marginBottom: height * 0.1,  // 화면 높이에 따라 버튼들 위치 조정
   },
   leftColumn: {
     justifyContent: 'center',
@@ -110,13 +110,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonIcon: {
-    width: 190,
-    height: 80,
-    marginBottom: '7%', // 이벤트와 스토어 사이 간격 조정
+    width: width * 0.45,  // 기기 너비의 45%에 해당하는 크기
+    height: height * 0.1,  // 기기 높이의 10%에 해당하는 크기
+    marginBottom: height * 0.015,  // 기기 높이에 따라 이벤트와 스토어 사이 간격 조정
   },
   w_buttonIcon: {
-    width: 170,
-    height: 170,
+    width: width * 0.425,  // 기기 너비의 42.5%에 해당하는 크기
+    height: width * 0.425,  // 기기 너비의 42.5%에 해당하는 높이
   },
 });
 
