@@ -571,99 +571,99 @@
 		"name": "수원시",
 		"coordinate": { "latitude": 37.263556, "longitude": 127.028602 },
 		"markedLandmarks": [
-		{ "name": "수원화성", "coordinate": { "latitude": 37.266111, "longitude": 127.010278 } },
-		{ "name": "화성행궁", "coordinate": { "latitude": 37.263611, "longitude": 127.018611 } },
-		{ "name": "광교호수공원", "coordinate": { "latitude": 37.281111, "longitude": 127.038611 } }
+			{ "name": "수원화성", "coordinate": { "latitude": 37.266111, "longitude": 127.010278 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "화성행궁", "coordinate": { "latitude": 37.263611, "longitude": 127.018611 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "광교호수공원", "coordinate": { "latitude": 37.281111, "longitude": 127.038611 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "고양시",
 		"coordinate": { "latitude": 37.658825, "longitude": 126.831787 },
 		"markedLandmarks": [
-		{ "name": "일산호수공원", "coordinate": { "latitude": 37.660833, "longitude": 126.831111 } },
-		{ "name": "킨텍스", "coordinate": { "latitude": 37.669722, "longitude": 126.839722 } },
-		{ "name": "백석동 성당", "coordinate": { "latitude": 37.652500, "longitude": 126.832222 } }
+			{ "name": "일산호수공원", "coordinate": { "latitude": 37.660833, "longitude": 126.831111 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "킨텍스", "coordinate": { "latitude": 37.669722, "longitude": 126.839722 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "백석동 성당", "coordinate": { "latitude": 37.652500, "longitude": 126.832222 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "성남시",
 		"coordinate": { "latitude": 37.438589, "longitude": 127.137594 },
 		"markedLandmarks": [
-		{ "name": "판교테크노밸리", "coordinate": { "latitude": 37.398611, "longitude": 127.117222 } },
-		{ "name": "성남시청", "coordinate": { "latitude": 37.437222, "longitude": 127.137222 } },
-		{ "name": "모란시장", "coordinate": { "latitude": 37.433611, "longitude": 127.139722 } }
+			{ "name": "판교테크노밸리", "coordinate": { "latitude": 37.398611, "longitude": 127.117222 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "성남시청", "coordinate": { "latitude": 37.437222, "longitude": 127.137222 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "모란시장", "coordinate": { "latitude": 37.433611, "longitude": 127.139722 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "안양시",
 		"coordinate": { "latitude": 37.392547, "longitude": 126.930877 },
 		"markedLandmarks": [
-		{ "name": "안양천", "coordinate": { "latitude": 37.399722, "longitude": 126.936944 } },
-		{ "name": "관악산", "coordinate": { "latitude": 37.389444, "longitude": 126.927222 } },
-		{ "name": "평촌학원가", "coordinate": { "latitude": 37.398056, "longitude": 126.931389 } }
+			{ "name": "안양천", "coordinate": { "latitude": 37.399722, "longitude": 126.936944 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "관악산", "coordinate": { "latitude": 37.389444, "longitude": 126.927222 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "평촌학원가", "coordinate": { "latitude": 37.398056, "longitude": 126.931389 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "용인시",
 		"coordinate": { "latitude": 37.233091, "longitude": 127.005297 },
 		"markedLandmarks": [
-		{ "name": "에버랜드", "coordinate": { "latitude": 37.233333, "longitude": 127.009167 } },
-		{ "name": "수지구청", "coordinate": { "latitude": 37.323611, "longitude": 127.027222 } },
-		{ "name": "용인한국민속촌", "coordinate": { "latitude": 37.239722, "longitude": 126.989444 } }
+			{ "name": "에버랜드", "coordinate": { "latitude": 37.233333, "longitude": 127.009167 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "수지구청", "coordinate": { "latitude": 37.323611, "longitude": 127.027222 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "용인한국민속촌", "coordinate": { "latitude": 37.239722, "longitude": 126.989444 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "광명시",
 		"coordinate": { "latitude": 37.477147, "longitude": 126.900569 },
 		"markedLandmarks": [
-		{ "name": "광명동굴", "coordinate": { "latitude": 37.475833, "longitude": 126.897222 } },
-		{ "name": "광명사거리", "coordinate": { "latitude": 37.474722, "longitude": 126.905833 } },
-		{ "name": "광명시장", "coordinate": { "latitude": 37.477222, "longitude": 126.902222 } }
+			{ "name": "광명동굴", "coordinate": { "latitude": 37.475833, "longitude": 126.897222 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "광명사거리", "coordinate": { "latitude": 37.474722, "longitude": 126.905833 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "광명시장", "coordinate": { "latitude": 37.477222, "longitude": 126.902222 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "화성시",
 		"coordinate": { "latitude": 37.199565, "longitude": 126.831413 },
 		"markedLandmarks": [
-		{ "name": "제부도", "coordinate": { "latitude": 37.156667, "longitude": 126.616667 } },
-		{ "name": "융건릉", "coordinate": { "latitude": 37.200833, "longitude": 127.053889 } },
-		{ "name": "궁평항", "coordinate": { "latitude": 37.096944, "longitude": 126.691389 } }
+			{ "name": "제부도", "coordinate": { "latitude": 37.156667, "longitude": 126.616667 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "융건릉", "coordinate": { "latitude": 37.200833, "longitude": 127.053889 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "궁평항", "coordinate": { "latitude": 37.096944, "longitude": 126.691389 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "안산시",
 		"coordinate": { "latitude": 37.320017, "longitude": 126.830825 },
 		"markedLandmarks": [
-		{ "name": "안산호수공원", "coordinate": { "latitude": 37.315833, "longitude": 126.823611 } },
-		{ "name": "상록수", "coordinate": { "latitude": 37.316944, "longitude": 126.837222 } },
-		{ "name": "오이도", "coordinate": { "latitude": 37.314722, "longitude": 126.823611 } }
+			{ "name": "안산호수공원", "coordinate": { "latitude": 37.315833, "longitude": 126.823611 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "상록수", "coordinate": { "latitude": 37.316944, "longitude": 126.837222 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "오이도", "coordinate": { "latitude": 37.314722, "longitude": 126.823611 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "포천시",
 		"coordinate": { "latitude": 37.896417, "longitude": 127.204790 },
 		"markedLandmarks": [
-		{ "name": "포천아트밸리", "coordinate": { "latitude": 37.895833, "longitude": 127.200833 } },
-		{ "name": "백운계곡", "coordinate": { "latitude": 37.903611, "longitude": 127.214722 } },
-		{ "name": "포천성", "coordinate": { "latitude": 37.893056, "longitude": 127.208611 } }
+			{ "name": "포천아트밸리", "coordinate": { "latitude": 37.895833, "longitude": 127.200833 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "백운계곡", "coordinate": { "latitude": 37.903611, "longitude": 127.214722 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "포천성", "coordinate": { "latitude": 37.893056, "longitude": 127.208611 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "여주시",
 		"coordinate": { "latitude": 37.296162, "longitude": 127.631927 },
 		"markedLandmarks": [
-		{ "name": "여주오곡나루터", "coordinate": { "latitude": 37.292500, "longitude": 127.630833 } },
-		{ "name": "명성황후 생가", "coordinate": { "latitude": 37.301111, "longitude": 127.636111 } },
-		{ "name": "여주프리미엄아울렛", "coordinate": { "latitude": 37.289722, "longitude": 127.641944 } }
+			{ "name": "여주오곡나루터", "coordinate": { "latitude": 37.292500, "longitude": 127.630833 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "명성황후 생가", "coordinate": { "latitude": 37.301111, "longitude": 127.636111 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "여주프리미엄아울렛", "coordinate": { "latitude": 37.289722, "longitude": 127.641944 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
 		"name": "이천시",
 		"coordinate": { "latitude": 37.274375, "longitude": 127.423409 },
 		"markedLandmarks": [
-		{ "name": "이천시립박물관", "coordinate": { "latitude": 37.271111, "longitude": 127.423611 } },
-		{ "name": "도자기박물관", "coordinate": { "latitude": 37.281944, "longitude": 127.423611 } },
-		{ "name": "설봉공원", "coordinate": { "latitude": 37.267500, "longitude": 127.429167 } }
+			{ "name": "이천시립박물관", "coordinate": { "latitude": 37.271111, "longitude": 127.423611 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "도자기박물관", "coordinate": { "latitude": 37.281944, "longitude": 127.423611 }, "mission": "수원 화성에서 사진 찍기" },
+			{ "name": "설봉공원", "coordinate": { "latitude": 37.270278, "longitude": 127.427222 }, "mission": "수원 화성에서 사진 찍기" }
 		]
 	},
 	{
