@@ -358,44 +358,36 @@ export default function App({navigation}) {
       {/* 모달창 구현 */}
       <CustomModalOverlay
         isVisible={selectedCity}
-        onClose={() => 
-          {
-            setIsMissionModalOpened(false)
-            setShowCities(false)
-            setShowLandmarks(false)
-            setSelectedCity(null)
-          }}
-      > 
-        {selectedCity ? 
-        <ScrollView>
-          <Text style={styles.missionTitle}>
-          {"Mission in " + selectedCity["name"]}
-          </Text>
-          <View style={styles.horizontalLine}/>
-          <ScrollView horizontal={true}>
-            <View style={styles.missionsContainer}>
-              {landmarks.map((landmark, index) => 
-              { 
-                return(
-                  <View key={index} style={styles.missionContainer}>
-                    <Text style={styles.missionText}>
-                      {landmark["mission"]}
+        onClose={() => {
+          setIsMissionModalOpened(false);
+          setShowCities(false);
+          setShowLandmarks(false);
+          setSelectedCity(null);
+        }}
+      >
+        {selectedCity ? (
+          <View style={styles.modalContent}>
+            <Text style={styles.missionTitle}>
+              {"Mission in " + selectedCity["name"]}
+            </Text>
+            <View style={styles.horizontalLine} />
+            <ScrollView contentContainerStyle={styles.missionsContainer}>
+              {landmarks.map((landmark, index) => (
+                <View key={index} style={styles.missionContainer}>
+                  <Text style={styles.missionText}>
+                    {landmark["mission"]}
+                  </Text>
+                  <TouchableOpacity style={styles.challengeButton} onPress={() => alert("도전!")}>
+                    <Text style={styles.challengeButtonText}>
+                      도전
                     </Text>
-                    <TouchableOpacity style={styles.challengeButton} onPress={() => alert("도전!")}>
-                      <Text style={{fontSize : 10}}>
-                        도전
-                      </Text>
-                      <Image source={coinImg}/>
-                    </TouchableOpacity>
-                  </View>
-                )
-              })}
-            </View>
-          </ScrollView>
-        </ScrollView>
-        :
-        null
-        }
+                    <Image source={coinImg} style={styles.coinImage} />
+                  </TouchableOpacity>
+                </View>
+              ))}
+            </ScrollView>
+          </View>
+        ) : null}
       </CustomModalOverlay>
     </View>
   );
@@ -479,6 +471,7 @@ const styles = StyleSheet.create({
   },
   missionsContainer : {
     display : "flex",
+    borderWidth : 2,
     gap : 15,
     backgroundColor : "white",
     paddingHorizontal : "3%",
@@ -503,7 +496,55 @@ const styles = StyleSheet.create({
     flexDirection : "row",
     justifyContent : "space-between",
     alignItems : "stretch"
-  }
+  },
+  modalContent: {
+    width: '100%',
+  },
+  missionTitle: {
+    textAlign: "left",
+    color: "#121212",
+    fontWeight: "bold",
+    fontSize: 27,
+    marginBottom: 10,
+  },
+  horizontalLine: {
+    width: '100%',
+    height: 1.5,
+    backgroundColor: "black",
+    marginVertical: 10,
+  },
+  missionsContainer: {
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 15,
+  },
+  missionContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 15,
+  },
+  missionText: {
+    flex: 1,
+    fontSize: 13,
+    fontWeight: "bold",
+    marginRight: 10,
+  },
+  challengeButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#D9D9D9",
+    borderRadius: 5,
+    padding: 5,
+  },
+  challengeButtonText: {
+    fontSize: 10,
+    marginRight: 5,
+  },
+  coinImage: {
+    width: 15,
+    height: 15,
+  },
 });
 
 
