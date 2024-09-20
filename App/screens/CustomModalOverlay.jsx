@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     height: MODAL_HEIGHT,
-    backgroundColor: 'white',
+    backgroundColor: '#FFF2F2',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     padding: 20,
@@ -49,6 +49,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    paddingHorizontal : "7%",
+    paddingBottom : "3%",
+    paddingTop : "5%",
   },
 });
 

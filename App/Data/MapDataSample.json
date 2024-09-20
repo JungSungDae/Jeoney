@@ -86,6 +86,51 @@
 		{ "name": "부안영상테마파크", "coordinate": { "latitude": 35.705833, "longitude": 126.702500 } }
 		]
 	},
+	{
+		"name": "진안군",
+		"coordinate": { "latitude": 35.7911, "longitude": 127.4256 },
+		"markedLandmarks": [
+		{ "name": "마이산", "coordinate": { "latitude": 35.7907, "longitude": 127.4258 } },
+		{ "name": "진안 홍삼스파", "coordinate": { "latitude": 35.7954, "longitude": 127.4350 } },
+		{ "name": "운일암반일암 계곡", "coordinate": { "latitude": 35.8994, "longitude": 127.3624 } }
+		]
+	},
+	{
+		"name": "무주군",
+		"coordinate": { "latitude": 36.0063, "longitude": 127.6602 },
+		"markedLandmarks": [
+		{ "name": "덕유산 국립공원", "coordinate": { "latitude": 35.9025, "longitude": 127.7548 } },
+		{ "name": "무주 태권도원", "coordinate": { "latitude": 36.0090, "longitude": 127.6541 } },
+		{ "name": "무주리조트", "coordinate": { "latitude": 35.8965, "longitude": 127.7496 } }
+		]
+	},
+	{
+		"name": "장수군",
+		"coordinate": { "latitude": 35.6489, "longitude": 127.5210 },
+		"markedLandmarks": [
+		{ "name": "장수 승마체험장", "coordinate": { "latitude": 35.6485, "longitude": 127.5451 } },
+		{ "name": "방화동 가족휴가촌", "coordinate": { "latitude": 35.6994, "longitude": 127.5445 } },
+		{ "name": "장수 논개사당", "coordinate": { "latitude": 35.6522, "longitude": 127.5195 } }
+		]
+	},
+	{
+		"name": "임실군",
+		"coordinate": { "latitude": 35.6176, "longitude": 127.2872 },
+		"markedLandmarks": [
+		{ "name": "임실치즈테마파크", "coordinate": { "latitude": 35.6082, "longitude": 127.3026 } },
+		{ "name": "섬진강 옥정호", "coordinate": { "latitude": 35.5965, "longitude": 127.2664 } },
+		{ "name": "필봉농악전수관", "coordinate": { "latitude": 35.5781, "longitude": 127.1534 } }
+		]
+	},
+	{
+		"name": "순창군",
+		"coordinate": { "latitude": 35.3743, "longitude": 127.1374 },
+		"markedLandmarks": [
+		{ "name": "강천산 군립공원", "coordinate": { "latitude": 35.3952, "longitude": 127.1116 } },
+		{ "name": "순창 고추장 마을", "coordinate": { "latitude": 35.3745, "longitude": 127.1466 } },
+		{ "name": "순창 장류체험관", "coordinate": { "latitude": 35.3783, "longitude": 127.1417 } }
+		]
+	},
 	{"__도__" : "__전남__"},
 	{
 		"name": "목포시",
@@ -175,6 +220,114 @@
 		{ "name": "완도타워", "coordinate": { "latitude": 34.311111, "longitude": 126.758611 } },
 		{ "name": "청산도", "coordinate": { "latitude": 34.188056, "longitude": 126.840833 } },
 		{ "name": "장보고기념관", "coordinate": { "latitude": 34.314722, "longitude": 126.746944 } }
+		]
+	},
+	{
+		"name": "곡성군",
+		"coordinate": { "latitude": 35.2811, "longitude": 127.2908 },
+		"markedLandmarks": [
+		{ "name": "곡성 섬진강 기차마을", "coordinate": { "latitude": 35.2848, "longitude": 127.2923 } },
+		{ "name": "섬진강 천문대", "coordinate": { "latitude": 35.2538, "longitude": 127.4515 } },
+		{ "name": "태안사", "coordinate": { "latitude": 35.2395, "longitude": 127.4897 } }
+		]
+	},
+	{
+		"name": "구례군",
+		"coordinate": { "latitude": 35.2033, "longitude": 127.4628 },
+		"markedLandmarks": [
+		{ "name": "지리산 국립공원", "coordinate": { "latitude": 35.2801, "longitude": 127.4869 } },
+		{ "name": "구례 화엄사", "coordinate": { "latitude": 35.2723, "longitude": 127.4828 } },
+		{ "name": "산수유 마을", "coordinate": { "latitude": 35.1977, "longitude": 127.4526 } }
+		]
+	},
+	{
+		"name": "고흥군",
+		"coordinate": { "latitude": 34.6131, "longitude": 127.2844 },
+		"markedLandmarks": [
+		{ "name": "나로우주센터", "coordinate": { "latitude": 34.4315, "longitude": 127.5357 } },
+		{ "name": "고흥 팔영산", "coordinate": { "latitude": 34.6324, "longitude": 127.2583 } },
+		{ "name": "고흥 소록도", "coordinate": { "latitude": 34.5398, "longitude": 127.1143 } }
+		]
+	},
+	{
+		"name": "화순군",
+		"coordinate": { "latitude": 35.0635, "longitude": 126.9852 },
+		"markedLandmarks": [
+		{ "name": "화순 운주사", "coordinate": { "latitude": 35.0161, "longitude": 126.9330 } },
+		{ "name": "화순 고인돌 유적지", "coordinate": { "latitude": 34.9921, "longitude": 126.9800 } },
+		{ "name": "백아산 자연휴양림", "coordinate": { "latitude": 35.1301, "longitude": 127.0045 } }
+		]
+	},
+	{
+		"name": "장흥군",
+		"coordinate": { "latitude": 34.6827, "longitude": 126.9077 },
+		"markedLandmarks": [
+		{ "name": "천관산", "coordinate": { "latitude": 34.6810, "longitude": 126.8239 } },
+		{ "name": "정남진 편백숲 우드랜드", "coordinate": { "latitude": 34.7250, "longitude": 126.9324 } },
+		{ "name": "보림사", "coordinate": { "latitude": 34.6424, "longitude": 126.8173 } }
+		]
+	},
+	{
+		"name": "강진군",
+		"coordinate": { "latitude": 34.6426, "longitude": 126.7674 },
+		"markedLandmarks": [
+		{ "name": "강진 다산초당", "coordinate": { "latitude": 34.6111, "longitude": 126.7674 } },
+		{ "name": "강진 고려청자박물관", "coordinate": { "latitude": 34.5035, "longitude": 126.6496 } },
+		{ "name": "백운동 별서정원", "coordinate": { "latitude": 34.6175, "longitude": 126.6677 } }
+		]
+	},
+	{
+		"name": "영암군",
+		"coordinate": { "latitude": 34.8000, "longitude": 126.6963 },
+		"markedLandmarks": [
+		{ "name": "월출산 국립공원", "coordinate": { "latitude": 34.7498, "longitude": 126.7014 } },
+		{ "name": "도갑사", "coordinate": { "latitude": 34.8076, "longitude": 126.6406 } },
+		{ "name": "영암 왕인박사 유적지", "coordinate": { "latitude": 34.8080, "longitude": 126.6554 } }
+		]
+	},
+	{
+		"name": "무안군",
+		"coordinate": { "latitude": 34.9901, "longitude": 126.4782 },
+		"markedLandmarks": [
+		{ "name": "무안회산백련지", "coordinate": { "latitude": 34.9448, "longitude": 126.4790 } },
+		{ "name": "무안황토갯벌랜드", "coordinate": { "latitude": 34.9874, "longitude": 126.3971 } },
+		{ "name": "톱머리 해수욕장", "coordinate": { "latitude": 35.0123, "longitude": 126.2810 } }
+		]
+	},
+	{
+		"name": "함평군",
+		"coordinate": { "latitude": 35.0656, "longitude": 126.5164 },
+		"markedLandmarks": [
+		{ "name": "함평 자연생태공원", "coordinate": { "latitude": 35.0674, "longitude": 126.5134 } },
+		{ "name": "함평 해수찜", "coordinate": { "latitude": 35.0737, "longitude": 126.4524 } },
+		{ "name": "함평 나비축제", "coordinate": { "latitude": 35.0680, "longitude": 126.5130 } }
+		]
+	},
+	{
+		"name": "영광군",
+		"coordinate": { "latitude": 35.2758, "longitude": 126.5110 },
+		"markedLandmarks": [
+		{ "name": "백수해안도로", "coordinate": { "latitude": 35.3667, "longitude": 126.4943 } },
+		{ "name": "법성포 굴비거리", "coordinate": { "latitude": 35.2873, "longitude": 126.4264 } },
+		{ "name": "원불교 영산성지", "coordinate": { "latitude": 35.3005, "longitude": 126.5172 } }
+		]
+	},
+	{
+		"name": "진도군",
+		"coordinate": { "latitude": 34.4863, "longitude": 126.2634 },
+		"markedLandmarks": [
+		{ "name": "진도 신비의 바닷길", "coordinate": { "latitude": 34.3747, "longitude": 126.3223 } },
+		{ "name": "운림산방", "coordinate": { "latitude": 34.4124, "longitude": 126.2821 } },
+		{ "name": "진도타워", "coordinate": { "latitude": 34.4738, "longitude": 126.2630 } }
+		]
+	},
+	{
+		"name": "신안군",
+		"coordinate": { "latitude": 34.8336, "longitude": 125.9997 },
+		"markedLandmarks": [
+		{ "name": "흑산도", "coordinate": { "latitude": 34.6814, "longitude": 125.4247 } },
+		{ "name": "신안 퍼플섬", "coordinate": { "latitude": 34.9064, "longitude": 126.1363 } },
+		{ "name": "홍도", "coordinate": { "latitude": 34.6848, "longitude": 125.1871 } }
 		]
 	},
 	{"__도__" : "__충남__"},
@@ -268,6 +421,51 @@
 		{ "name": "고운식물원", "coordinate": { "latitude": 36.512778, "longitude": 126.830278 } }
 		]
 	},
+	{
+		"name": "계룡시",
+		"coordinate": { "latitude": 36.2975, "longitude": 127.2711 },
+		"markedLandmarks": [
+		{ "name": "계룡산", "coordinate": { "latitude": 36.2980, "longitude": 127.2689 } },
+		{ "name": "계룡시립도서관", "coordinate": { "latitude": 36.3003, "longitude": 127.2726 } },
+		{ "name": "계룡세계군문화엑스포", "coordinate": { "latitude": 36.2980, "longitude": 127.2870 } }
+		]
+	},
+	{
+		"name": "당진시",
+		"coordinate": { "latitude": 36.8001, "longitude": 126.6538 },
+		"markedLandmarks": [
+		{ "name": "당진 왜목마을", "coordinate": { "latitude": 36.7862, "longitude": 126.6249 } },
+		{ "name": "신평 공원", "coordinate": { "latitude": 36.7925, "longitude": 126.6286 } },
+		{ "name": "당진문화재단", "coordinate": { "latitude": 36.7981, "longitude": 126.6172 } }
+		]
+	},
+	{
+		"name": "금산군",
+		"coordinate": { "latitude": 36.2095, "longitude": 127.2871 },
+		"markedLandmarks": [
+		{ "name": "금산 인삼약초관", "coordinate": { "latitude": 36.2035, "longitude": 127.3198 } },
+		{ "name": "금산군 역사박물관", "coordinate": { "latitude": 36.2090, "longitude": 127.2940 } },
+		{ "name": "금산 마을관광지", "coordinate": { "latitude": 36.1843, "longitude": 127.3075 } }
+		]
+	},
+	{
+		"name": "홍성군",
+		"coordinate": { "latitude": 36.6453, "longitude": 126.6355 },
+		"markedLandmarks": [
+		{ "name": "홍주성", "coordinate": { "latitude": 36.6494, "longitude": 126.6318 } },
+		{ "name": "홍성 한우거리", "coordinate": { "latitude": 36.6467, "longitude": 126.6485 } },
+		{ "name": "홍성꽃동산", "coordinate": { "latitude": 36.6445, "longitude": 126.6201 } }
+		]
+	},
+	{
+		"name": "예산군",
+		"coordinate": { "latitude": 36.6781, "longitude": 126.8562 },
+		"markedLandmarks": [
+		{ "name": "예산 황새공원", "coordinate": { "latitude": 36.6813, "longitude": 126.8740 } },
+		{ "name": "예산국제청소년센터", "coordinate": { "latitude": 36.6850, "longitude": 126.8498 } },
+		{ "name": "예산 두리봉", "coordinate": { "latitude": 36.6632, "longitude": 126.8665 } }
+		]
+	},
 	{"__도__" : "__충북__"},
 	{
 		"name": "청주시",
@@ -339,6 +537,33 @@
 		{ "name": "음성향교", "coordinate": { "latitude": 36.457222, "longitude": 127.482778 } },
 		{ "name": "청룡사", "coordinate": { "latitude": 36.454444, "longitude": 127.477222 } },
 		{ "name": "음성문화원", "coordinate": { "latitude": 36.454722, "longitude": 127.482222 } }
+		]
+	},
+	{
+		"name": "영동군",
+		"coordinate": { "latitude": 36.1578, "longitude": 127.5250 },
+		"markedLandmarks": [
+		{ "name": "영동포도축제", "coordinate": { "latitude": 36.1496, "longitude": 127.4500 } },
+		{ "name": "영동고려인삼 박물관", "coordinate": { "latitude": 36.1305, "longitude": 127.4848 } },
+		{ "name": "용수산", "coordinate": { "latitude": 36.1751, "longitude": 127.5258 } }
+		]
+	},
+	{
+		"name": "증평군",
+		"coordinate": { "latitude": 36.6672, "longitude": 127.4965 },
+		"markedLandmarks": [
+		{ "name": "증평한옥마을", "coordinate": { "latitude": 36.6544, "longitude": 127.4745 } },
+		{ "name": "증평읍성", "coordinate": { "latitude": 36.6630, "longitude": 127.4950 } },
+		{ "name": "증평 무궁화 테마파크", "coordinate": { "latitude": 36.6705, "longitude": 127.4845 } }
+		]
+	},
+	{
+		"name": "단양군",
+		"coordinate": { "latitude": 36.1039, "longitude": 128.3647 },
+		"markedLandmarks": [
+		{ "name": "단양팔경", "coordinate": { "latitude": 36.1340, "longitude": 128.3940 } },
+		{ "name": "고수동굴", "coordinate": { "latitude": 36.0850, "longitude": 128.3653 } },
+		{ "name": "단양 강변 공원", "coordinate": { "latitude": 36.1225, "longitude": 128.3850 } }
 		]
 	},
 	{"__도__" : "__경기도__"},
@@ -441,6 +666,186 @@
 		{ "name": "설봉공원", "coordinate": { "latitude": 37.267500, "longitude": 127.429167 } }
 		]
 	},
+	{
+		"name": "동두천시",
+		"coordinate": { "latitude": 37.9028, "longitude": 127.0614 },
+		"markedLandmarks": [
+		{ "name": "동두천 두타산", "coordinate": { "latitude": 37.9050, "longitude": 127.0667 } },
+		{ "name": "동두천 문화원", "coordinate": { "latitude": 37.9020, "longitude": 127.0710 } },
+		{ "name": "세월호 추모비", "coordinate": { "latitude": 37.9015, "longitude": 127.0700 } }
+		]
+	},
+	{
+		"name": "의정부시",
+		"coordinate": { "latitude": 37.7381, "longitude": 127.0361 },
+		"markedLandmarks": [
+		{ "name": "의정부 한마음 광장", "coordinate": { "latitude": 37.7380, "longitude": 127.0400 } },
+		{ "name": "의정부시립도서관", "coordinate": { "latitude": 37.7390, "longitude": 127.0450 } },
+		{ "name": "의정부 탑골공원", "coordinate": { "latitude": 37.7405, "longitude": 127.0385 } }
+		]
+	},
+	{
+		"name": "구리시",
+		"coordinate": { "latitude": 37.6000, "longitude": 127.1287 },
+		"markedLandmarks": [
+		{ "name": "구리한강시민공원", "coordinate": { "latitude": 37.6100, "longitude": 127.1300 } },
+		{ "name": "구리전통시장", "coordinate": { "latitude": 37.6015, "longitude": 127.1280 } },
+		{ "name": "구리 아트홀", "coordinate": { "latitude": 37.6010, "longitude": 127.1275 } }
+		]
+	},
+	{
+		"name": "하남시",
+		"coordinate": { "latitude": 37.5451, "longitude": 127.2116 },
+		"markedLandmarks": [
+		{ "name": "하남 스타필드", "coordinate": { "latitude": 37.5540, "longitude": 127.2000 } },
+		{ "name": "하남시청소년수련관", "coordinate": { "latitude": 37.5530, "longitude": 127.2090 } },
+		{ "name": "미사리 조정경기장", "coordinate": { "latitude": 37.5520, "longitude": 127.1870 } }
+		]
+	},
+	{
+		"name": "부천시",
+		"coordinate": { "latitude": 37.5032, "longitude": 126.7852 },
+		"markedLandmarks": [
+		{ "name": "부천 아트센터", "coordinate": { "latitude": 37.5035, "longitude": 126.7700 } },
+		{ "name": "부천 원미공원", "coordinate": { "latitude": 37.5030, "longitude": 126.7800 } },
+		{ "name": "부천 국제판타스틱영화제", "coordinate": { "latitude": 37.5032, "longitude": 126.7850 } }
+		]
+	},
+	{
+		"name": "과천시",
+		"coordinate": { "latitude": 37.4385, "longitude": 126.9881 },
+		"markedLandmarks": [
+		{ "name": "서울대공원", "coordinate": { "latitude": 37.4400, "longitude": 126.9890 } },
+		{ "name": "과천과학관", "coordinate": { "latitude": 37.4420, "longitude": 126.9840 } },
+		{ "name": "과천시청", "coordinate": { "latitude": 37.4370, "longitude": 126.9920 } }
+		]
+	},
+	{
+		"name": "군포시",
+		"coordinate": { "latitude": 37.3615, "longitude": 126.9337 },
+		"markedLandmarks": [
+		{ "name": "군포문화예술회관", "coordinate": { "latitude": 37.3610, "longitude": 126.9350 } },
+		{ "name": "군포시립도서관", "coordinate": { "latitude": 37.3600, "longitude": 126.9380 } },
+		{ "name": "군포천", "coordinate": { "latitude": 37.3605, "longitude": 126.9300 } }
+		]
+	},
+	{
+		"name": "의왕시",
+		"coordinate": { "latitude": 37.3353, "longitude": 126.9960 },
+		"markedLandmarks": [
+		{ "name": "의왕 백운호수", "coordinate": { "latitude": 37.3350, "longitude": 126.9910 } },
+		{ "name": "의왕 철도박물관", "coordinate": { "latitude": 37.3355, "longitude": 127.0000 } },
+		{ "name": "의왕시민회관", "coordinate": { "latitude": 37.3320, "longitude": 126.9920 } }
+		]
+	},
+	{
+		"name": "오산시",
+		"coordinate": { "latitude": 37.1500, "longitude": 127.0675 },
+		"markedLandmarks": [
+		{ "name": "오산 물향기 수목원", "coordinate": { "latitude": 37.1505, "longitude": 127.0710 } },
+		{ "name": "오산문화예술회관", "coordinate": { "latitude": 37.1490, "longitude": 127.0650 } },
+		{ "name": "오산시립도서관", "coordinate": { "latitude": 37.1480, "longitude": 127.0690 } }
+		]
+	},
+	{
+		"name": "연천군",
+		"coordinate": { "latitude": 38.0766, "longitude": 127.0497 },
+		"markedLandmarks": [
+		{ "name": "연천 전곡리 유적", "coordinate": { "latitude": 38.0760, "longitude": 127.0470 } },
+		{ "name": "연천 고대유적지", "coordinate": { "latitude": 38.0800, "longitude": 127.0500 } },
+		{ "name": "연천 소야산", "coordinate": { "latitude": 38.0900, "longitude": 127.0400 } }
+		]
+	},
+	{
+		"name": "김포시",
+		"coordinate": { "latitude": 37.6287, "longitude": 126.6518 },
+		"markedLandmarks": [
+		{ "name": "김포한강신도시", "coordinate": { "latitude": 37.6290, "longitude": 126.6610 } },
+		{ "name": "김포시민회관", "coordinate": { "latitude": 37.6260, "longitude": 126.6500 } },
+		{ "name": "김포 평화누리공원", "coordinate": { "latitude": 37.6200, "longitude": 126.6400 } }
+		]
+	},
+	{
+		"name": "파주시",
+		"coordinate": { "latitude": 37.7598, "longitude": 126.7784 },
+		"markedLandmarks": [
+		{ "name": "임진각", "coordinate": { "latitude": 37.7540, "longitude": 126.7470 } },
+		{ "name": "파주 프로방스", "coordinate": { "latitude": 37.7490, "longitude": 126.7950 } },
+		{ "name": "헤이리 예술마을", "coordinate": { "latitude": 37.7460, "longitude": 126.7820 } }
+		]
+	},
+	{
+		"name": "양주시",
+		"coordinate": { "latitude": 37.8371, "longitude": 127.0335 },
+		"markedLandmarks": [
+		{ "name": "양주립미술관", "coordinate": { "latitude": 37.8430, "longitude": 127.0440 } },
+		{ "name": "양주 은현민속마을", "coordinate": { "latitude": 37.8470, "longitude": 127.0220 } },
+		{ "name": "양주 자생식물원", "coordinate": { "latitude": 37.8400, "longitude": 127.0330 } }
+		]
+	},
+	{
+		"name": "가평군",
+		"coordinate": { "latitude": 37.8341, "longitude": 127.2870 },
+		"markedLandmarks": [
+		{ "name": "남이섬", "coordinate": { "latitude": 37.5255, "longitude": 127.4386 } },
+		{ "name": "가평 레일바이크", "coordinate": { "latitude": 37.7900, "longitude": 127.3035 } },
+		{ "name": "가평 아침고요수목원", "coordinate": { "latitude": 37.6833, "longitude": 127.2397 } }
+		]
+	},
+	{
+		"name": "남양주시",
+		"coordinate": { "latitude": 37.6304, "longitude": 127.2222 },
+		"markedLandmarks": [
+		{ "name": "다산 정약용 유적지", "coordinate": { "latitude": 37.6340, "longitude": 127.2180 } },
+		{ "name": "남양주 물의정원", "coordinate": { "latitude": 37.6200, "longitude": 127.2070 } },
+		{ "name": "남양주 다산문화관", "coordinate": { "latitude": 37.6310, "longitude": 127.2200 } }
+		]
+	},
+	{
+		"name": "시흥시",
+		"coordinate": { "latitude": 37.3978, "longitude": 126.8260 },
+		"markedLandmarks": [
+		{ "name": "시흥 시화MTV", "coordinate": { "latitude": 37.3960, "longitude": 126.8300 } },
+		{ "name": "시흥 물왕저수지", "coordinate": { "latitude": 37.3950, "longitude": 126.8300 } },
+		{ "name": "시흥 배곧 해수욕장", "coordinate": { "latitude": 37.3945, "longitude": 126.8280 } }
+		]
+	},
+	{
+		"name": "양평군",
+		"coordinate": { "latitude": 37.4912, "longitude": 127.5789 },
+		"markedLandmarks": [
+		{ "name": "양평 두물머리", "coordinate": { "latitude": 37.4900, "longitude": 127.5800 } },
+		{ "name": "양평 레일바이크", "coordinate": { "latitude": 37.4820, "longitude": 127.5880 } },
+		{ "name": "양평 물소리길", "coordinate": { "latitude": 37.4940, "longitude": 127.5700 } }
+		]
+	},
+	{
+		"name": "평택시",
+		"coordinate": { "latitude": 36.9984, "longitude": 127.1132 },
+		"markedLandmarks": [
+		{ "name": "평택호관광단지", "coordinate": { "latitude": 36.9990, "longitude": 127.1150 } },
+		{ "name": "평택항", "coordinate": { "latitude": 37.0000, "longitude": 127.1120 } },
+		{ "name": "평택시립도서관", "coordinate": { "latitude": 36.9950, "longitude": 127.1200 } }
+		]
+	},
+	{
+		"name": "안성시",
+		"coordinate": { "latitude": 37.0050, "longitude": 127.2785 },
+		"markedLandmarks": [
+		{ "name": "안성 팜랜드", "coordinate": { "latitude": 37.0030, "longitude": 127.2900 } },
+		{ "name": "안성 시립도서관", "coordinate": { "latitude": 37.0100, "longitude": 127.2750 } },
+		{ "name": "안성행궁", "coordinate": { "latitude": 37.0120, "longitude": 127.2740 } }
+		]
+	},
+	{
+		"name": "광주시",
+		"coordinate": { "latitude": 37.4027, "longitude": 127.2619 },
+		"markedLandmarks": [
+		{ "name": "광주 곤지암 리조트", "coordinate": { "latitude": 37.4060, "longitude": 127.2770 } },
+		{ "name": "광주 식물원", "coordinate": { "latitude": 37.4100, "longitude": 127.2600 } },
+		{ "name": "화담숲", "coordinate": { "latitude": 37.3974, "longitude": 127.2610 } }
+		]
+	},
 	{"__도__" : "__강원도__"},
 	{
 		"name": "춘천시",
@@ -523,6 +928,87 @@
 		{ "name": "제정란 벽화마을", "coordinate": { "latitude": 38.229444, "longitude": 127.358333 } }
 		]
 	},
+	{
+		"name": "동해시",
+		"coordinate": { "latitude": 37.5160, "longitude": 127.4943 },
+		"markedLandmarks": [
+		{ "name": "추암 해변", "coordinate": { "latitude": 37.5705, "longitude": 129.0747 } },
+		{ "name": "동해시립박물관", "coordinate": { "latitude": 37.5171, "longitude": 127.4699 } },
+		{ "name": "망상해변", "coordinate": { "latitude": 37.5132, "longitude": 127.5148 } }
+		]
+	},
+	{
+		"name": "태백시",
+		"coordinate": { "latitude": 37.1203, "longitude": 128.9874 },
+		"markedLandmarks": [
+		{ "name": "태백산", "coordinate": { "latitude": 37.1239, "longitude": 128.9967 } },
+		{ "name": "태백석탄박물관", "coordinate": { "latitude": 37.1200, "longitude": 128.9770 } },
+		{ "name": "태백 눈꽃축제", "coordinate": { "latitude": 37.1190, "longitude": 128.9880 } }
+		]
+	},
+	{
+		"name": "횡성군",
+		"coordinate": { "latitude": 37.2300, "longitude": 128.1757 },
+		"markedLandmarks": [
+		{ "name": "횡성 한우마을", "coordinate": { "latitude": 37.2390, "longitude": 128.1950 } },
+		{ "name": "횡성호", "coordinate": { "latitude": 37.2325, "longitude": 128.1691 } },
+		{ "name": "횡성 자연휴양림", "coordinate": { "latitude": 37.2500, "longitude": 128.1200 } }
+		]
+	},
+	{
+		"name": "영월군",
+		"coordinate": { "latitude": 37.1663, "longitude": 128.5200 },
+		"markedLandmarks": [
+		{ "name": "영월 동강", "coordinate": { "latitude": 37.1670, "longitude": 128.5800 } },
+		{ "name": "영월 문화예술회관", "coordinate": { "latitude": 37.1700, "longitude": 128.5400 } },
+		{ "name": "영월 한반도 지형", "coordinate": { "latitude": 37.1620, "longitude": 128.5460 } }
+		]
+	},
+	{
+		"name": "화천군",
+		"coordinate": { "latitude": 38.1207, "longitude": 127.7362 },
+		"markedLandmarks": [
+		{ "name": "화천 산천어 축제", "coordinate": { "latitude": 38.1300, "longitude": 127.7400 } },
+		{ "name": "화천 강변 공원", "coordinate": { "latitude": 38.1150, "longitude": 127.7200 } },
+		{ "name": "화천 이포리 자연생태공원", "coordinate": { "latitude": 38.1210, "longitude": 127.7300 } }
+		]
+	},
+	{
+		"name": "양구군",
+		"coordinate": { "latitude": 38.1298, "longitude": 128.1470 },
+		"markedLandmarks": [
+		{ "name": "양구 두타산", "coordinate": { "latitude": 38.1350, "longitude": 128.1430 } },
+		{ "name": "양구 명승지", "coordinate": { "latitude": 38.1200, "longitude": 128.1500 } },
+		{ "name": "양구 석룡폭포", "coordinate": { "latitude": 38.1260, "longitude": 128.1550 } }
+		]
+	},
+	{
+		"name": "인제군",
+		"coordinate": { "latitude": 38.1270, "longitude": 128.1871 },
+		"markedLandmarks": [
+		{ "name": "인제 자작나무숲", "coordinate": { "latitude": 38.1350, "longitude": 128.1950 } },
+		{ "name": "인제 스키장", "coordinate": { "latitude": 38.1500, "longitude": 128.1920 } },
+		{ "name": "인제 가리산", "coordinate": { "latitude": 38.1400, "longitude": 128.1800 } }
+		]
+	},
+	{
+		"name": "고성군",
+		"coordinate": { "latitude": 38.3473, "longitude": 128.5784 },
+		"markedLandmarks": [
+		{ "name": "고성 대포항", "coordinate": { "latitude": 38.3530, "longitude": 128.5850 } },
+		{ "name": "고성 DMZ 박물관", "coordinate": { "latitude": 38.3410, "longitude": 128.5700 } },
+		{ "name": "고성 산토리니", "coordinate": { "latitude": 38.3490, "longitude": 128.5770 } }
+		]
+	},
+	{
+		"name": "양양군",
+		"coordinate": { "latitude": 38.0351, "longitude": 128.6356 },
+		"markedLandmarks": [
+		{ "name": "양양 낙산사", "coordinate": { "latitude": 38.0338, "longitude": 128.6450 } },
+		{ "name": "양양 해변", "coordinate": { "latitude": 38.0365, "longitude": 128.6360 } },
+		{ "name": "양양 강원도 해양레포츠센터", "coordinate": { "latitude": 38.0340, "longitude": 128.6340 } }
+		]
+	},
 	{"__도__" : "__경북__"},
 	{
 		"name": "경주시",
@@ -570,7 +1056,7 @@
 		]
 	},
 	{
-		"name": "상주",
+		"name": "상주시",
 		"coordinate": { "latitude": 36.411429, "longitude": 128.166135 },
 		"markedLandmarks": [
 		{ "name": "상주박물관", "coordinate": { "latitude": 36.410833, "longitude": 128.161389 } },
@@ -605,6 +1091,132 @@
 		{ "name": "금강송 군락지", "coordinate": { "latitude": 36.991944, "longitude": 129.423611 } }
 		]
 	},
+	{
+		"name": "영주시",
+		"coordinate": { "latitude": 36.8008, "longitude": 128.6005 },
+		"markedLandmarks": [
+		{ "name": "부석사", "coordinate": { "latitude": 36.8162, "longitude": 128.6094 } },
+		{ "name": "소수서원", "coordinate": { "latitude": 36.8176, "longitude": 128.5900 } },
+		{ "name": "영주 부석사 계곡", "coordinate": { "latitude": 36.8150, "longitude": 128.6110 } }
+		]
+	},
+	{
+		"name": "봉화군",
+		"coordinate": { "latitude": 36.8348, "longitude": 128.8115 },
+		"markedLandmarks": [
+		{ "name": "봉화의료원", "coordinate": { "latitude": 36.8330, "longitude": 128.8100 } },
+		{ "name": "봉화산", "coordinate": { "latitude": 36.8410, "longitude": 128.8250 } },
+		{ "name": "봉화 자연휴양림", "coordinate": { "latitude": 36.8200, "longitude": 128.8030 } }
+		]
+	},
+	{
+		"name": "예천군",
+		"coordinate": { "latitude": 36.6591, "longitude": 128.3851 },
+		"markedLandmarks": [
+		{ "name": "예천온천", "coordinate": { "latitude": 36.6620, "longitude": 128.3950 } },
+		{ "name": "예천박물관", "coordinate": { "latitude": 36.6500, "longitude": 128.3800 } },
+		{ "name": "예천대교", "coordinate": { "latitude": 36.6400, "longitude": 128.4000 } }
+		]
+	},
+	{
+		"name": "영양군",
+		"coordinate": { "latitude": 36.6611, "longitude": 129.0866 },
+		"markedLandmarks": [
+		{ "name": "영양사과", "coordinate": { "latitude": 36.6700, "longitude": 129.0900 } },
+		{ "name": "영양 자연휴양림", "coordinate": { "latitude": 36.6500, "longitude": 129.0800 } },
+		{ "name": "영양 국립공원", "coordinate": { "latitude": 36.6600, "longitude": 129.1000 } }
+		]
+	},
+	{
+		"name": "의성군",
+		"coordinate": { "latitude": 36.3495, "longitude": 128.4284 },
+		"markedLandmarks": [
+		{ "name": "의성 조문국", "coordinate": { "latitude": 36.3480, "longitude": 128.4000 } },
+		{ "name": "의성 한우마을", "coordinate": { "latitude": 36.3500, "longitude": 128.4500 } },
+		{ "name": "의성 양수리", "coordinate": { "latitude": 36.3600, "longitude": 128.4200 } }
+		]
+	},
+	{
+		"name": "청송군",
+		"coordinate": { "latitude": 36.3150, "longitude": 129.1143 },
+		"markedLandmarks": [
+		{ "name": "청송 주왕산", "coordinate": { "latitude": 36.3130, "longitude": 129.1320 } },
+		{ "name": "청송사과", "coordinate": { "latitude": 36.3200, "longitude": 129.1300 } },
+		{ "name": "청송 물소리길", "coordinate": { "latitude": 36.3100, "longitude": 129.1400 } }
+		]
+	},
+	{
+		"name": "영덕군",
+		"coordinate": { "latitude": 36.4245, "longitude": 129.3958 },
+		"markedLandmarks": [
+		{ "name": "영덕 대게", "coordinate": { "latitude": 36.4260, "longitude": 129.4000 } },
+		{ "name": "영덕 해변", "coordinate": { "latitude": 36.4250, "longitude": 129.3900 } },
+		{ "name": "영덕 물회", "coordinate": { "latitude": 36.4200, "longitude": 129.3950 } }
+		]
+	},
+	{
+		"name": "군위군",
+		"coordinate": { "latitude": 36.1539, "longitude": 128.4953 },
+		"markedLandmarks": [
+		{ "name": "군위 온천", "coordinate": { "latitude": 36.1600, "longitude": 128.5000 } },
+		{ "name": "군위 감천사", "coordinate": { "latitude": 36.1400, "longitude": 128.4900 } },
+		{ "name": "군위 명주사", "coordinate": { "latitude": 36.1500, "longitude": 128.4950 } }
+		]
+	},
+	{
+		"name": "칠곡군",
+		"coordinate": { "latitude": 35.9986, "longitude": 128.3883 },
+		"markedLandmarks": [
+		{ "name": "칠곡 낙동강", "coordinate": { "latitude": 35.9960, "longitude": 128.3900 } },
+		{ "name": "칠곡 도개시장", "coordinate": { "latitude": 35.9900, "longitude": 128.3700 } },
+		{ "name": "칠곡 아가페 공원", "coordinate": { "latitude": 36.0000, "longitude": 128.3900 } }
+		]
+	},
+	{
+		"name": "성주군",
+		"coordinate": { "latitude": 35.9925, "longitude": 128.3078 },
+		"markedLandmarks": [
+		{ "name": "성주 참외", "coordinate": { "latitude": 35.9900, "longitude": 128.3100 } },
+		{ "name": "성주 별고을", "coordinate": { "latitude": 35.9950, "longitude": 128.3150 } },
+		{ "name": "성주 자연휴양림", "coordinate": { "latitude": 35.9800, "longitude": 128.3000 } }
+		]
+	},
+	{
+		"name": "고령군",
+		"coordinate": { "latitude": 35.6610, "longitude": 128.1765 },
+		"markedLandmarks": [
+		{ "name": "고령 대가야 박물관", "coordinate": { "latitude": 35.6700, "longitude": 128.1800 } },
+		{ "name": "고령 대가야 문화축제", "coordinate": { "latitude": 35.6600, "longitude": 128.1900 } },
+		{ "name": "고령 가야산", "coordinate": { "latitude": 35.6700, "longitude": 128.2000 } }
+		]
+	},
+	{
+		"name": "경산시",
+		"coordinate": { "latitude": 35.8267, "longitude": 128.7471 },
+		"markedLandmarks": [
+		{ "name": "경산 대구 가톨릭대학교", "coordinate": { "latitude": 35.8300, "longitude": 128.7400 } },
+		{ "name": "경산 실내수영장", "coordinate": { "latitude": 35.8200, "longitude": 128.7500 } },
+		{ "name": "경산 자연휴양림", "coordinate": { "latitude": 35.8100, "longitude": 128.7300 } }
+		]
+	},
+	{
+		"name": "청도군",
+		"coordinate": { "latitude": 35.6702, "longitude": 128.7381 },
+		"markedLandmarks": [
+		{ "name": "청도 반시", "coordinate": { "latitude": 35.6800, "longitude": 128.7400 } },
+		{ "name": "청도 자연휴양림", "coordinate": { "latitude": 35.6700, "longitude": 128.7300 } },
+		{ "name": "청도문화재단", "coordinate": { "latitude": 35.6700, "longitude": 128.7300 } }
+		]
+	},
+	{
+		"name": "울릉군",
+		"coordinate": { "latitude": 37.4833, "longitude": 130.8597 },
+		"markedLandmarks": [
+		{ "name": "울릉도", "coordinate": { "latitude": 37.4785, "longitude": 130.8519 } },
+		{ "name": "울릉도 봉래폭포", "coordinate": { "latitude": 37.4700, "longitude": 130.8600 } },
+		{ "name": "울릉도 독도", "coordinate": { "latitude": 37.2975, "longitude": 131.8693 } }
+		]
+	},
 	{"__도__" : "__경남__"},
 	{
 		"name": "창원시",
@@ -613,15 +1225,6 @@
 		{ "name": "마산항", "coordinate": { "latitude": 35.199444, "longitude": 128.596111 } },
 		{ "name": "창원 성산아트홀", "coordinate": { "latitude": 35.228333, "longitude": 128.681944 } },
 		{ "name": "경상남도립미술관", "coordinate": { "latitude": 35.232222, "longitude": 128.686111 } }
-		]
-	},
-	{
-		"name": "부산시",
-		"coordinate": { "latitude": 35.179554, "longitude": 129.075641 },
-		"markedLandmarks": [
-		{ "name": "해운대 해수욕장", "coordinate": { "latitude": 35.158056, "longitude": 129.160833 } },
-		{ "name": "광안리 해수욕장", "coordinate": { "latitude": 35.159167, "longitude": 129.124167 } },
-		{ "name": "부산타워", "coordinate": { "latitude": 35.102222, "longitude": 129.040833 } }
 		]
 	},
 	{
@@ -685,6 +1288,78 @@
 		{ "name": "거창항노화웰빙타운", "coordinate": { "latitude": 35.643611, "longitude": 127.979167 } },
 		{ "name": "거창온천", "coordinate": { "latitude": 35.648611, "longitude": 127.974167 } },
 		{ "name": "거창박물관", "coordinate": { "latitude": 35.651944, "longitude": 127.977222 } }
+		]
+	},
+	{
+		"name": "사천시",
+		"coordinate": { "latitude": 34.9614, "longitude": 128.0226 },
+		"markedLandmarks": [
+		{ "name": "사천 공항", "coordinate": { "latitude": 34.9510, "longitude": 128.0060 } },
+		{ "name": "사천 해수욕장", "coordinate": { "latitude": 34.9680, "longitude": 128.0210 } },
+		{ "name": "사천 남해안", "coordinate": { "latitude": 34.9600, "longitude": 128.0400 } }
+		]
+	},
+	{
+		"name": "밀양시",
+		"coordinate": { "latitude": 35.4870, "longitude": 128.7460 },
+		"markedLandmarks": [
+		{ "name": "밀양 얼음골", "coordinate": { "latitude": 35.4890, "longitude": 128.7510 } },
+		{ "name": "밀양 가곡동", "coordinate": { "latitude": 35.4850, "longitude": 128.7400 } },
+		{ "name": "밀양 수산시장", "coordinate": { "latitude": 35.4880, "longitude": 128.7490 } }
+		]
+	},
+	{
+		"name": "의령군",
+		"coordinate": { "latitude": 35.3922, "longitude": 128.1542 },
+		"markedLandmarks": [
+		{ "name": "의령 홍화군", "coordinate": { "latitude": 35.3910, "longitude": 128.1550 } },
+		{ "name": "의령 한우", "coordinate": { "latitude": 35.3900, "longitude": 128.1600 } },
+		{ "name": "의령 고천사", "coordinate": { "latitude": 35.4000, "longitude": 128.1400 } }
+		]
+	},
+	{
+		"name": "함안군",
+		"coordinate": { "latitude": 35.2722, "longitude": 128.4270 },
+		"markedLandmarks": [
+		{ "name": "함안 성산", "coordinate": { "latitude": 35.2700, "longitude": 128.4200 } },
+		{ "name": "함안 물레방아", "coordinate": { "latitude": 35.2800, "longitude": 128.4300 } },
+		{ "name": "함안 여유당", "coordinate": { "latitude": 35.2750, "longitude": 128.4250 } }
+		]
+	},
+	{
+		"name": "창녕군",
+		"coordinate": { "latitude": 35.3405, "longitude": 128.2901 },
+		"markedLandmarks": [
+		{ "name": "창녕 우포늪", "coordinate": { "latitude": 35.3470, "longitude": 128.2800 } },
+		{ "name": "창녕 성주봉", "coordinate": { "latitude": 35.3350, "longitude": 128.2950 } },
+		{ "name": "창녕 박물관", "coordinate": { "latitude": 35.3400, "longitude": 128.3000 } }
+		]
+	},
+	{
+		"name": "고성군",
+		"coordinate": { "latitude": 34.9734, "longitude": 128.4112 },
+		"markedLandmarks": [
+		{ "name": "고성 공룡발자국 화석지", "coordinate": { "latitude": 34.9720, "longitude": 128.4120 } },
+		{ "name": "고성 해변", "coordinate": { "latitude": 34.9750, "longitude": 128.4100 } },
+		{ "name": "고성 통일전망대", "coordinate": { "latitude": 34.9650, "longitude": 128.4040 } }
+		]
+	},
+	{
+		"name": "남해군",
+		"coordinate": { "latitude": 34.8419, "longitude": 127.9303 },
+		"markedLandmarks": [
+		{ "name": "남해 독일마을", "coordinate": { "latitude": 34.8400, "longitude": 127.9300 } },
+		{ "name": "남해 바다", "coordinate": { "latitude": 34.8500, "longitude": 127.9200 } },
+		{ "name": "남해 상주사", "coordinate": { "latitude": 34.8350, "longitude": 127.9150 } }
+		]
+	},
+	{
+		"name": "하동군",
+		"coordinate": { "latitude": 35.0472, "longitude": 127.7175 },
+		"markedLandmarks": [
+		{ "name": "하동 녹차밭", "coordinate": { "latitude": 35.0450, "longitude": 127.7200 } },
+		{ "name": "하동 섬진강", "coordinate": { "latitude": 35.0500, "longitude": 127.7250 } },
+		{ "name": "하동 쌍계사", "coordinate": { "latitude": 35.0400, "longitude": 127.7100 } }
 		]
 	},
 	{"__도__" : "__광역시__"},

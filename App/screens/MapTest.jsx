@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform, Modal } from 'react-native';
+import { StyleSheet, View, Text, Dimensions, ActivityIndicator, Button, TextInput, KeyboardAvoidingView, Platform, Modal, ScrollView, TouchableOpacity } from 'react-native';
 import MapView, { Marker, Polyline, Polygon } from 'react-native-maps';
 import * as Location from 'expo-location';
 import mapData from '../Data/MapDataSample.json'; // MapDataSample.json 파일 import
@@ -9,8 +9,9 @@ const { width, height } = Dimensions.get('window');
 
 export default function App() {
   // 도시 마커 이미지와 랜드마크 마커 이미지 경로
-  const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png");
-  const landmarkMarkerImg = require("../assets/MapViewIcons/landmarkMarker.png"); // 랜드마크 마커 이미지 추가
+  const cityMarkerImg = require("../assets/MapViewIcons/cityMarker.png"); // 경유 도시 이미지
+  const landmarkMarkerImg = require("../assets/MapViewIcons/landmarkMarker.png"); // 랜드마크 마커 이미지
+  const coinImg = require("../assets/MissionModalIcons/coin.png"); // 코인 이미지
 
   // 상태 변수 선언
   const [presentLocation, setPresentLocation] = useState(null); // 현재 위치
@@ -98,10 +99,10 @@ export default function App() {
         const city = addressComponents.find(component =>
           component.types.includes('locality') || component.types.includes('administrative_area_level_1')
         );
-        const cityName = city ? city.long_name : 'Unknown city';
+        const missionTitle = city ? city.long_name : 'Unknown city';
 
         const placesResponse = await fetch(
-          `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(cityName)}&inputtype=textquery&fields=formatted_address,name,geometry&key=${GOOGLE_MAPS_APIKEY}&language=ko`
+          `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(missionTitle)}&inputtype=textquery&fields=formatted_address,name,geometry&key=${GOOGLE_MAPS_APIKEY}&language=ko`
         );
         const placesData = await placesResponse.json();
 
@@ -306,7 +307,8 @@ export default function App() {
                 title={marker.name}
                 image={cityMarkerImg}
                 onPress={() => handleCityPress(marker)}
-              />
+              >
+              </Marker>
             ))}
             {/* 랜드마크 마커 추가 */}
             {showLandmarks && landmarks.map((landmark, index) => (
@@ -343,29 +345,55 @@ export default function App() {
               <Button title="모두 지우기" onPress={handleClear} />
             </View>
           )}
-          
-          <Button
-            title="모달 열기"
-            onPress={() => setIsMissionModalOpened(true)}
-          />
+
+          <MenuBar/>
+
         </>
       ) : (
         <ActivityIndicator size="large" color="#0000ff" />
       )}
       
+
+      {/* 모달창 구현 */}
       <CustomModalOverlay
-        isVisible={isMissionModalOpened}
+        isVisible={selectedCity}
         onClose={() => 
           {
             setIsMissionModalOpened(false)
             setShowCities(false)
             setShowLandmarks(false)
+            setSelectedCity(null)
           }}
-      >
-        <Text style={{
-          marginBottom: 15,
-          textAlign: 'center',
-        }}>모달 내용입니다!</Text>
+      > 
+        {selectedCity ? 
+        <ScrollView>
+          <Text style={styles.missionTitle}>
+          {"Mission in " + selectedCity["name"]}
+          </Text>
+          <View style={styles.horizontalLine}/>
+          <View style={styles.missionContainer}>
+            {landmarks.map((landmark, index) => 
+            { 
+              return(
+                <View key={index}>
+                  <Text style={styles.missionText}>
+                    {landmark["mission"]}
+                  </Text>
+                  {console.log(landmark)}
+                  {/* <TouchableOpacity>
+                    <Image source={coinImg}/>
+                    <Text>
+                      도전
+                    </Text>
+                  </TouchableOpacity> */}
+                </View>
+              )
+            })}
+          </View>
+        </ScrollView>
+        :
+        null
+        }
       </CustomModalOverlay>
     </View>
   );
@@ -435,6 +463,31 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 16,
   },
+  missionTitle:{
+    textAlign: "left",
+    color:"#121212",
+    fontWeight : "bold",
+    fontSize : 27
+  },
+  horizontalLine :{
+    width : "100%",
+    height : 1.5,
+    backgroundColor : "black",
+    marginVertical : 10
+  },
+  missionContainer : {
+    display : "flex",
+    gap : 15,
+    backgroundColor : "white",
+    paddingHorizontal : "3%",
+    paddingVertical : "4%",
+    borderRadius : 20
+  },
+  missionText : {
+    fontSize : 13,
+    fontWeight : "bold"
+
+  }
 });
 
 
